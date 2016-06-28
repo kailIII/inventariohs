@@ -8,7 +8,7 @@ include_once("sesion.php");
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prestamo de equipos - Ingresar</title>
+  <title>Prestamo de equipos Alquilados</title>
    <Link rel ="shortcut icon" href="uninorte.ico" />
   <link rel="stylesheet" href="css/foundation.css" />
   <script src="js/vendor/modernizr.js"></script>
@@ -30,7 +30,7 @@ include_once("sesion.php");
     <ul class="title-area">
       <li class="name">
         <!-- Titulo del Menu -->
-        <h1><a href="#">Inventario de Equipos de Soporte</a></h1>
+        <h1><a href="#">Inventario de Equipos Alquilados</a></h1>
       </li>
         <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
     </ul>
@@ -49,7 +49,7 @@ include_once("sesion.php");
 
  <!-- ******************************************** INFORMACION DEL USUARIO QUE PRESTA LAS LLAVES ************************************** -->
           <div class="row">
-            <h4> Informacion del Equipo a prestar (Pc - Monitor - Impresora - Scanner)</h4>
+            <h4> Informacion del Equipo alquilado a prestar (Pc - Monitor - Impresora - Scanner)</h4>
             <select name="seleccionar_equipo_soporte" id="seleccionar_equipo_soporte">
                 <option selected="selected">-----Seleccionar Activo------</option>
                 <?php
@@ -99,7 +99,7 @@ include_once("sesion.php");
               </div>
 
               <div class="columns large-2">
-                <label for="ot_sigma">Ot Sigma</label>
+                <label for="ot_sigma">Ot Aranda</label>
                 <input type="text" name="ot_sigma" id="ot_sigma" placeholder="Obligatorio Ot Sigma">
               </div>
 
@@ -121,26 +121,61 @@ include_once("sesion.php");
 
 
           <div class="row">
-            <div class="columns large-2">
-              <label for="ext_tel">Extension telefonica</label>
-              <input type="text" name="ext_tel" id="ext_tel"  pattern="[0-9]+$" placeholder="Obligatorio Ext">
-            </div>
-
-            <div class="columns large-3">
+              <div class="columns large-4">
                 <label for="departamento">Departamento</label>
                 <input type="text" name="departamento" id="departamento" value="" placeholder="Suministrado por el sistema">
-            </div>
+              </div>
+
+              <div class="columns large-8">
+                <label for="seleccionar_correo_usuario_equipo">Email</label>
+                <select name="seleccionar_correo_usuario_equipo" id="seleccionar_correo_usuario_equipo">
+                  <option selected="selected">----- Seleccionar E-mail ------</option>
+                  <?php
+                    include_once("config.php");
+                    $conexion = mysql_connect($server,$username,$password);
+                    mysql_set_charset('utf8',$conexion);
+                    mysql_select_db($database);
+                     //$sw_id     = $_POST['sw_id'];
+                     // $dir_ip_sw = $_POST['dir_ip_sw'];
+                    //  $unidad    = $_POST['unidad'];
+                    $query = "SELECT id_correo, nombres, area, cargo, ext, correo FROM correo ORDER BY nombres ";
+
+                    $resultado = mysql_query($query,$conexion);
+                    $numero_de_filas = mysql_num_rows($resultado);
+                    while($registro=mysql_fetch_array($resultado))
+                    {
+                      $id_correo          = $registro['id_correo'];
+                      $nombres            = $registro['nombres'];
+                      $cargo              = $registro['cargo'];
+                      $ext                = $registro['ext'];
+                      $correo             = $registro['correo'];
+
+                      echo '<option value="'.$id_correo.'">'.$nombres.''." - ".''.$cargo.''." - ".''.$ext.''." ".''." - correo: ".''.$correo.'</option>';
+                    }
+                  ?>
+                </select> <br/><br/>
+              </div>
+
+
+          </div>
+
+
+          <div class="row">
 
             <div class="columns large-4">
                 <label for="usuario_equipo">Usuario del equipo</label>
                 <input type="text" name="usuario_equipo" id="usuario_equipo" placeholder="Suministrado por el sistema">
             </div>
 
-            <div class="columns large-3">
+            <div class="columns large-4">
                 <label for="email_usuario">Email Usuario</label>
                 <input type="text" name="email_usuario" id="email_usuario" value="" placeholder="Suministrado por el sistema">
             </div>
 
+             <div class="columns large-2">
+                <label for="ext_tel">Extension telefonica</label>
+                <input type="text" name="ext_tel" id="ext_tel"  pattern="[0-9]+$" placeholder="Obligatorio Ext">
+            </div>
           </div>
 
           <div class="row">
@@ -207,6 +242,7 @@ include_once("sesion.php");
   <script src="js/vendor/jquery.js"></script>
   <script src="js/foundation.min.js"></script>
   <script src="js/soporte.js"></script>
+  <script src="js/correo.js"></script>
   <script>
 //    $(document).foundation();
   </script>

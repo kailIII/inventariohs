@@ -8,7 +8,7 @@ include_once("sesion.php");
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Soporte - Ingresar / Modificar</title>
+  <title>Prestamos de Equipos de Soporte</title>
   <Link rel ="shortcut icon" href="uninorte.ico" type="image/x-icon"/>
   <link rel="stylesheet" href="css/foundation.css" />
   <script src="js/vendor/modernizr.js"></script>

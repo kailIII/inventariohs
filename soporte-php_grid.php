@@ -7,14 +7,16 @@
             <th>Fecha Limite</th>
             <th>Dias Prestado</th>
             <th>Activo Dañado</th>
+            <th>Usuario</th>
             <th>Bloque</th>
             <th>Piso</th>
             <th>Cubiculo</th>
             <th>Ext</th>
             <th>Ot Aranda</th>
+            <th>Tecnico Responsable</th>
             <th>Editar</th>
-            <th>Recordatorio</th>
-            <th>Borrar</th>
+           <!--  <th>Recordatorio</th> -->
+           <!--  <th>Borrar</th> -->
         </tr>
     </thead>
     <tbody>
@@ -31,15 +33,17 @@
                 ?>
                 <td><?php echo $diferencia ;?></td>
                 <td><?php echo $cliente['activo_danado'];?></td>
+                <td><?php echo $cliente['usuario_equipo'];?></td>
                 <td><?php echo $cliente['bloque'];?></td>
                 <td><?php echo $cliente['piso'];?></td>
                 <td><?php echo $cliente['cubiculo'];?></td>
-                <td><?php echo $cliente['ext'];?></td>
+                <td><?php echo $cliente['ext_tel'];?></td>
                 <td><?php echo $cliente['ot_sigma'];?></td>
+                <td><?php echo $cliente['usuario_tecnico'];?></td>
                 <td><a class="edit button" href="javascript:void(0);" data-id="<?php echo $cliente['id'];?>">Editar</a></td>
-                <td><a class="recordatorio button" href="javascript:void(0);" data-id="<?php echo $cliente['id'];?>">Recordatorio</a></td>
-                <td><a class="delete button"  href="javascript:void(0);" data-id="<?php echo $cliente['id'];?>">Borrar</a></td>
-            </tr>
+               <!--  <td><a class="recordatorio button" href="javascript:void(0);" data-id="<?php echo $cliente['id'];?>">Recordatorio</a></td> -->
+               <!--  <td><a class="delete button"  href="javascript:void(0);" data-id="<?php echo $cliente['id'];?>">Borrar</a></td> -->
+            </tr> 
         <?php endforeach; ?>
     </tbody>
 </table>
