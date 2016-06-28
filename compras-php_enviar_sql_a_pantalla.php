@@ -7,6 +7,8 @@ include_once("config.php");
 $orden_de_compra = $_POST['orden_de_compra'];
 $activo_equipo = $_POST['activo_equipo'];
 $activo_monitor = $_POST['activo_monitor'];
+$activo_equipo_a_retirar = $_POST['activo_equipo_a_retirar'];
+$activo_monitor_a_retirar = $_POST['activo_monitor_a_retirar'];
 $id_est = $_POST['id_est'];
 
 echo "<p>Consulta de orden de compra: $orden_de_compra </p>" ;
@@ -27,7 +29,7 @@ LEFT JOIN marcas ON compras.com_marca_equipo = marcas.mar_id
 LEFT JOIN prioridades ON compras.com_prioridad = prioridades.pri_id
 LEFT JOIN estado ON compras.com_estado_equipo = estado.est_id
 LEFT JOIN procesos ON compras.com_proceso_equipo = procesos.pro_id
-WHERE com_orden_de_compra LIKE '%$orden_de_compra%' AND com_activo_equipo LIKE '%$activo_equipo%' AND com_activo_monitor LIKE '%$activo_monitor%' AND com_estado_equipo LIKE '%$id_est%'";
+WHERE com_orden_de_compra LIKE '%$orden_de_compra%' AND com_activo_equipo LIKE '%$activo_equipo%' AND com_activo_monitor LIKE '%$activo_monitor%' AND com_activo_equipo_retirar LIKE '%$activo_equipo_a_retirar%' AND com_activo_monitor_retirar LIKE '%$activo_monitor_a_retirar%' AND com_estado_equipo LIKE '%$id_est%'";
 
 $r = mysql_query($query,$conexion);
 

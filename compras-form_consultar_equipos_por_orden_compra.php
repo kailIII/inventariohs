@@ -54,17 +54,9 @@ include_once("sesion.php");
         <input type="text" name="orden_de_compra" id="orden_de_compra" placeholder="Obligatorio orden de compra " onkeypress="return letrasynumeros_sin_espacio(event)" style="text-transform:uppercase;" >
       </div>
 
-      <div class="columns large-3">
-        <label for="activo_equipo">Activo equipo</label>
-        <input type="text" name="activo_equipo" id="activo_equipo" placeholder="Obligatorio activo equipo " onkeypress="return letrasynumeros_sin_espacio(event)" style="text-transform:uppercase;">
-      </div>
+      
 
-      <div class="columns large-3">
-        <label for="activo_monitor">Activo monitor</label>
-        <input type="text" name="activo_monitor" id="activo_monitor" placeholder="Obligatorio activo monitor " onkeypress="return letrasynumeros_sin_espacio(event)" style="text-transform:uppercase;">
-      </div>
-
-      <div class="columns large-3">
+      <div class="columns large-4">
             <label for="proceso_equipo">Estado actual del equipo.</label>
             <select name="seleccionar_estado" id="seleccionar_estado">
                   <option selected="selected">----Seleccionar estado ----</option>
@@ -100,6 +92,30 @@ include_once("sesion.php");
     </div>
 
     <div class="row">
+
+      <div class="columns large-3">
+          <label for="activo_equipo">Activo equipo a instalar</label>
+          <input type="text" name="activo_equipo" id="activo_equipo" placeholder="Obligatorio activo equipo " onkeypress="return letrasynumeros_sin_espacio(event)" style="text-transform:uppercase;">
+      </div>
+
+      <div class="columns large-3">
+          <label for="activo_monitor">Activo monitor a instalar</label>
+          <input type="text" name="activo_monitor" id="activo_monitor" placeholder="Obligatorio activo monitor " onkeypress="return letrasynumeros_sin_espacio(event)" style="text-transform:uppercase;">
+      </div>
+
+      <div class="columns large-3">
+          <label for="activo_equipo">Activo equipo a retirar</label>
+          <input type="text" name="activo_equipo_a_retirar" id="activo_equipo_a_retirar" placeholder="Obligatorio activo equipo " onkeypress="return letrasynumeros_sin_espacio(event)" style="text-transform:uppercase;">
+      </div>
+
+      <div class="columns large-3">
+          <label for="activo_monitor">Activo monitor a retirar</label>
+          <input type="text" name="activo_monitor_a_retirar" id="activo_monitor_a_retirar" placeholder="Obligatorio activo monitor " onkeypress="return letrasynumeros_sin_espacio(event)" style="text-transform:uppercase;">
+      </div>
+    </div>
+
+
+    <div class="row">
       <div class="columns large-4">
         <input type="button" name="consultar_compras_de_equipos_por_pantalla" id="consultar_compras_de_equipos_por_pantalla" value="Consultar orden de compra pantalla" class="button">
       </div>
@@ -131,6 +147,8 @@ include_once("sesion.php");
           orden_de_compra: $('#orden_de_compra').val(),
           activo_equipo: $('#activo_equipo').val(),
           activo_monitor: $('#activo_monitor').val(),
+          activo_equipo_a_retirar: $('#activo_equipo_a_retirar').val(),
+          activo_monitor_a_retirar: $('#activo_monitor_a_retirar').val(),
           id_est: $('#id_est').val(),
         },
         function (data){
