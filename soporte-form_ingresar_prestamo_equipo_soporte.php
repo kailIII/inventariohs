@@ -93,6 +93,7 @@ include_once("sesion.php");
 
 
           <div class="row">
+          <h4> Informacion del equipo y Usuario al que se le presta el equipo</h4>
             <div class="columns large-2">
                 <label for="activo_danado">Activo Dañado</label>
                 <input type="text" name="activo_danado" id="activo_danado" placeholder="Obligatorio Activo Dañado">
@@ -179,6 +180,7 @@ include_once("sesion.php");
           </div>
 
           <div class="row">
+          <h4> Informacion del Tecnico que atiende el servicio</h4>
             <div class="columns large-4">
               <label for="usuario_tecnico">Tecnico que atiende el servicio</label>
               <input type="text" name="usuario_tecnico" id="usuario_tecnico"  placeholder="Obligatorio Tecnico">
