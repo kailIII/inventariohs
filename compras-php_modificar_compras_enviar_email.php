@@ -24,6 +24,7 @@
     $activo_equipo_retirar  = strtoupper($_POST['activo_equipo_retirar']);
     $activo_monitor_retirar = strtoupper($_POST['activo_monitor_retirar']);
     $id_pro                 = $_POST['id_pro'];
+    $proceso_equipo_retirar = $_POST['proceso_equipo_retirar'];
 
     $responsable            = strtoupper($_POST['responsable']);
     $email_responsable      = strtolower($_POST['email_responsable']);
@@ -121,9 +122,10 @@
                     'Bloque                     : '. "$bloque". "\r\n" .
                     'Piso                       : '. "$piso". "\r\n" .
                     'Ubicación                  : '. "$cubiculo". "\r\n" .
-                    'Observaciones              : '. "$observaciones". "\r\n" .
                     'Activo a retirar           : '. "$activo_equipo_retirar". "\r\n" . 
-                    'Activo monitor a retirar   : '. "$activo_monitor_retirar". "\r\n" . "\r\n" .
+                    'Activo monitor a retirar   : '. "$activo_monitor_retirar". "\r\n" . 
+                    'Proceso equipo retirado    : '. "$proceso_equipo_retirar". "\r\n" .
+                    'Observaciones              : '. "$observaciones". "\r\n" . "\r\n" .
                     'El activo se entrega en perfectas condiciones.'. "\r\n" .
                     'Este E-mail es enviado automáticamente desde el sistema de inventario de equipos del Laboratorio de Micros.' ;
 

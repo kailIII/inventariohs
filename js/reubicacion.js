@@ -45,7 +45,7 @@ $('#consultar_reubicacion').click(
             $('#punto_de_red').val( data['punto_de_red'] );
 
             $('#activo_equipo_retirar').val( data['activo_equipo_retirar'] );
-            $('#activo_monitor_a_retirar').val( data['activo_monitor_a_retirar'] );
+            $('#activo_monitor_retirar').val( data['activo_monitor_retirar'] );
             $('#seleccionar_proceso').val( data['id_pro'] );
             $('#id_pro').val( data['id_pro'] );
             $('#proceso_equipo_retirar').val( data['proceso_equipo_retirar'] );
@@ -150,7 +150,7 @@ $('#btn_exportar_equipo_reubicado').click(
             $('#punto_de_red').val( data['punto_de_red'] );
 
             $('#activo_equipo_retirar').val( data['activo_equipo_retirar'] );
-            $('#activo_monitor_a_retirar').val( data['activo_monitor_a_retirar'] );
+            $('#activo_monitor_retirar').val( data['activo_monitor_retirar'] );
             $('#seleccionar_proceso').val( data['id_pro'] );
             $('#proceso_equipo_retirar').val( data['proceso_equipo_retirar'] );
 
@@ -322,7 +322,7 @@ $('#btningresar_reubicacion').click(
       var piso                    = $('#piso').val();
       var cubiculo                = $('#cubiculo').val();
       var activo_equipo_retirar   = $('#activo_equipo_retirar').val();
-      var activo_monitor_a_retirar  = $('#activo_monitor_a_retirar').val();
+      var activo_monitor_retirar  = $('#activo_monitor_retirar').val();
       var nuevo_responsable       = $('#nuevo_responsable').val();
       var email_nuevo_responsable = $('#email_nuevo_responsable').val();
       var nuevo_usuario           = $('#nuevo_usuario').val();
@@ -352,7 +352,7 @@ $('#btningresar_reubicacion').click(
         piso:piso,
         cubiculo:cubiculo,
         activo_equipo_retirar:activo_equipo_retirar,
-        activo_monitor_a_retirar:activo_monitor_a_retirar,
+        activo_monitor_retirar:activo_monitor_retirar,
         id_pro:id_pro,
         nuevo_responsable:nuevo_responsable,
         email_nuevo_responsable:email_nuevo_responsable,
@@ -434,7 +434,7 @@ $('#btnmodificar_reubicacion').click(
           id_est:                 $('#id_est').val(),
           estado_equipo:          $('#estado_equipo').val(),
           activo_equipo_retirar:  $('#activo_equipo_retirar').val(),
-          activo_monitor_a_retirar: $('#activo_monitor_a_retirar').val(),
+          activo_monitor_retirar: $('#activo_monitor_retirar').val(),
           id_pro:                 $('#id_pro').val(),
           proceso_equipo_retirar: $('#proceso_equipo_retirar').val(),
 
@@ -561,7 +561,7 @@ $('#btnmodificar_reubicado_enviar_email').click(
           piso                    : $('#piso').val(),
           cubiculo                : $('#cubiculo').val(),
           activo_equipo_retirar   : $('#activo_equipo_retirar').val(),
-          activo_monitor_a_retirar  : $('#activo_monitor_a_retirar').val(),
+          activo_monitor_retirar  : $('#activo_monitor_retirar').val(),
           id_pro                  : $('#id_pro').val(),
           proceso_equipo_retirar  : $('#proceso_equipo_retirar').val(),
           nuevo_responsable       : $('#nuevo_responsable').val(),
@@ -639,7 +639,7 @@ $('.consultar_reubicacion').focusout(
             $('#punto_de_red').val( data['punto_de_red'] );
 
             $('#activo_equipo_retirar').val( data['activo_equipo_retirar'] );
-            $('#activo_monitor_a_retirar').val( data['activo_monitor_a_retirar'] );
+            $('#activo_monitor_retirar').val( data['activo_monitor_retirar'] );
             $('#seleccionar_proceso').val( data['procesos'] );
 
             $('#nuevo_responsable').val( data['nuevo_responsable'] );

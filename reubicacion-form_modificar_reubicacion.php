@@ -11,7 +11,6 @@ include_once("sesion.php");
     <title>Reubicación - Modificar</title>
     <link rel="shortcut icon" href="uninorte.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="css/foundation.css" />
-<!--     <link rel="stylesheet" type="text/css" href="css/estilo.css"> -->
     <script src="js/vendor/modernizr.js"></script>
 
 </head>
@@ -22,7 +21,6 @@ include_once("sesion.php");
             <img style="width: 203px; height: 146px margin: -55px -216px -112px -140px;" src="images/jpg/logo.jpg" alt="Logo Universidad del Norte."/>
           </h1>
         </div>
-
         <div class="columns large-2">
             <img style="width: 60px; height: 146px margin: -55px -216px -112px -140px;" src="<?php echo $_SESSION['ubicacion_foto'];  ?>">
             <?php echo $_SESSION['usuario'];?>
@@ -272,7 +270,7 @@ include_once("sesion.php");
 		    </div>
 
 		    <div class="columns large-2">
-		        <label for="ot_sigma">Ot de sigma.</label>
+		        <label for="ot_sigma">Ot Aranda.</label>
 		        <input type="text" name="ot_sigma" id="ot_sigma" class="ot_sigma" value="" placeholder="Obligatorio Ot de sigma">
 		    </div>
 
@@ -319,8 +317,8 @@ include_once("sesion.php");
 		                $numero_de_filas = mysql_num_rows($resultado);
 		                while($registro=mysql_fetch_array($resultado))
 		                {
-			        		$id_pro			= $registro['pro_id'];
-			                $proceso_equipo_retirar 	  	= $registro['pro_descripcion'];
+			        		$id_pro						= $registro['pro_id'];
+			                $proceso_equipo_retirar  	= $registro['pro_descripcion'];
 
 			                echo '<option value="'.$id_pro.'">'.$proceso_equipo_retirar.'</option>';
 			           	}

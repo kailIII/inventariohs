@@ -41,8 +41,9 @@ $('#btnconsultar_activo_compra').click(
             $('#estado_equipo').val( data['estado_equipo'] );
             $('#activo_equipo_retirar').val( data['activo_equipo_retirar'] );
             $('#activo_monitor_retirar').val( data['activo_monitor_retirar'] );
-            $('#seleccionar_proceso').val( data['procesos'] );
-            $('#id_pro').val( data['procesos'] );
+            $('#seleccionar_proceso').val( data['id_pro'] );
+            $('#id_pro').val( data['id_pro'] );
+            $('#proceso_equipo_retirar').val( data['proceso_equipo_retirar'] );
 
             $('#responsable').val( data['responsable']);
             $('#email_responsable').val( data['email_responsable'] );
@@ -241,6 +242,7 @@ $('#btningresar_compra').click(
         activo_equipo_retirar:activo_equipo_retirar,
         activo_monitor_retirar:activo_monitor_retirar,
         id_pro:id_pro,
+        proceso_equipo_retirar:proceso_equipo_retirar,
         responsable:responsable,
         usuario:usuario,
         ext_tel:ext_tel,
@@ -306,6 +308,7 @@ $('#btnmodificar_compra').click(
           activo_equipo_retirar:  $('#activo_equipo_retirar').val(),
           activo_monitor_retirar: $('#activo_monitor_retirar').val(),
           id_pro:                 $('#id_pro').val(),
+          proceso_equipo_retirar: $('#proceso_equipo_retirar').val(),
 
           responsable:            $('#responsable').val(),
           email_responsable:      $('#email_responsable').val(),
@@ -460,6 +463,7 @@ $('#btnmodificar_compra_enviar_email').click(
           activo_equipo_retirar:  $('#activo_equipo_retirar').val(),
           activo_monitor_retirar: $('#activo_monitor_retirar').val(),
           id_pro:                 $('#id_pro').val(),
+          proceso_equipo_retirar: $('#proceso_equipo_retirar').val(),
 
           responsable:            $('#responsable').val(),
           email_responsable:      $('#email_responsable').val(),

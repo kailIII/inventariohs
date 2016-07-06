@@ -122,18 +122,19 @@
     //$mail->msgHTML(file_get_contents('inicio.php'), dirname(__FILE__));
     //Replace the plain text body with one created manually
     $mail->Body =   'Por medio del presente correo, hago entrega del siguiente equipo : '."\r\n" . "\r\n" .
-                    'Activo del equipo      : '. "$activo_equipo"."\r\n" .
-                    'Tipo de equipo         : '. "$tipo_equipo" . "\r\n" .
-                    'Marca del equipo       : '. "$marca" . "\r\n" .
-                    'Activo monitor         : '. "$activo_monitor" . "\r\n" .
-                    'Responsable del equipo : '. "$nuevo_responsable". "\r\n" .
-                    'Usuario del equipo     : '. "$nuevo_usuario". "\r\n" .
-                    'Bloque                 : '. "$nuevo_bloque". "\r\n" .
-                    'Piso                   : '. "$nuevo_piso". "\r\n" .
-                    'Ubicación              : '. "$nuevo_cubiculo". "\r\n" .
-                    'Activo retirado        : '. "$activo_equipo_retirar"."\r\n".
-                    'Proceso equipo retirado: '. "$proceso_equipo_retirar". "\r\n" .
-                    'Observaciones          : '. "$observaciones". "\r\n" ."\r\n" .
+                    'Activo del equipo          : '. "$activo_equipo"."\r\n" .
+                    'Tipo de equipo             : '. "$tipo_equipo" . "\r\n" .
+                    'Marca del equipo           : '. "$marca" . "\r\n" .
+                    'Activo monitor             : '. "$activo_monitor" . "\r\n" .
+                    'Responsable del equipo     : '. "$nuevo_responsable". "\r\n" .
+                    'Usuario del equipo         : '. "$nuevo_usuario". "\r\n" .
+                    'Bloque                     : '. "$nuevo_bloque". "\r\n" .
+                    'Piso                       : '. "$nuevo_piso". "\r\n" .
+                    'Ubicación                  : '. "$nuevo_cubiculo". "\r\n" .
+                    'Activo retirado            : '. "$activo_equipo_retirar"."\r\n".
+                    'Activo monitor retirado    : '. "$activo_monitor_retirar"."\r\n".
+                    'Proceso equipo retirado    : '. "$proceso_equipo_retirar". "\r\n" .
+                    'Observaciones              : '. "$observaciones". "\r\n" ."\r\n" .
                     'El activo se entrega en perfectas condiciones, el usuario se RESPONSABILIZA por la custodia y buen manejo del mismo durante su permanecía en la universidad.'. "\r\n" . "\r\n" .
                     'Una vez recibida la notificación, el Auxiliar de activos  actualiza la información en el sistema Banner de acuerdo a los procedimientos establecidos.' . "\r\n" . "\r\n" .
                     'Sr. Usuario, si usted encuentra alguna inconsistencia en la información suministrada en el presente correo, favor notificarlo inmediatamente a trasladosybajas@uninorte.edu.co ó a coordinadordeactivos@uninorte.edu.co' . "\r\n" . "\r\n" .

@@ -264,8 +264,8 @@ include_once("sesion.php");
 		                	$conexion 	= mysql_connect($server,$username,$password);
 		                	mysql_set_charset('utf8',$conexion);
 		                	mysql_select_db($database);
-			                $id_pro			= $_POST['id_pro'];
-			                $procesos  		= $_POST['procesos'];
+			                $id_pro					= $_POST['id_pro'];
+			                $proceso_equipo_retirar = $_POST['proceso_equipo_retirar'];
 
 		                $query = "SELECT pro_id,pro_descripcion FROM procesos ORDER BY pro_descripcion ASC  ";
 
@@ -273,10 +273,10 @@ include_once("sesion.php");
 		                $numero_de_filas = mysql_num_rows($resultado);
 		                while($registro=mysql_fetch_array($resultado))
 		                {
-			        		$id_pro			= $registro['pro_id'];
-			                $procesos 	  	= $registro['pro_descripcion'];
+			        		$id_pro					= $registro['pro_id'];
+			                $proceso_equipo_retirar = $registro['pro_descripcion'];
 
-			                echo '<option value="'.$id_pro.'">'.$procesos.'</option>';
+			                echo '<option value="'.$id_pro.'">'.$proceso_equipo_retirar.'</option>';
 			           	}
 		            ?>
             	</select> <br/><br/>
@@ -284,6 +284,10 @@ include_once("sesion.php");
 
 			<div class="columns large-2">
 		        <input type="hidden" name="id_pro" id="id_pro" value="" placeholder="Obligatorio proceso del equipo">
+		    </div>
+
+		    <div class="columns large-2">
+		        <input type="hidden" name="proceso_equipo_retirar" id="proceso_equipo_retirar" value="" placeholder="Obligatorio proceso del equipo">
 		    </div>
 
 			<div class="columns large-4">
