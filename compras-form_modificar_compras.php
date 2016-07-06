@@ -54,7 +54,7 @@ include_once("sesion.php");
 		    <h4>Informacion del equipo</h4>
 		    <div class="columns large-2">
 		        <label for="activo_equipo">Activo del equipo</label>
-		        <input type="text" name="activo_equipo" id="activo_equipo" required = "[0-9]" autofocus=true value="" placeholder="Obligatorio activo equipo">
+		        <input type="text" name="activo_equipo" id="activo_equipo" style="text-transform: uppercase;" required = "[0-9]" autofocus=true value="" placeholder="Obligatorio activo equipo">
 	      	</div>
 
 	      	<div class="columns large-2">
@@ -133,7 +133,7 @@ include_once("sesion.php");
 
 			<div class="columns large-2">
 		        <label for="modelo_equipo">Modelo del equipo.</label>
-		    	<input type="text" name="modelo_equipo" id="modelo_equipo" value="" placeholder="Obligatorio modelo del equipo">
+		    	<input type="text" name="modelo_equipo" id="modelo_equipo" style="text-transform: uppercase;" value="" placeholder="Obligatorio modelo del equipo">
 		    </div>
 
 	 		<div class="columns large-2">
@@ -169,12 +169,12 @@ include_once("sesion.php");
 
 	      	<div class="columns large-2">
 		    	<label for="orden_de_compra">Orden de Compra</label>
-		        <input type="text" name="orden_de_compra" id="orden_de_compra" value="" placeholder="Obligatorio Orden de compra">
+		        <input type="text" name="orden_de_compra" id="orden_de_compra" style="text-transform: uppercase;" value="" placeholder="Obligatorio Orden de compra">
 		    </div>
 
  			<div class="columns large-2">
 		        <label for="serial_equipo">Serial del equipo</label>
-		        <input type="text" name="serial_equipo" id="serial_equipo" value="" placeholder="Obligatorio serial equipo">
+		        <input type="text" name="serial_equipo" id="serial_equipo" style="text-transform: uppercase;" value="" placeholder="Obligatorio serial equipo">
 		    </div>
 
 		    <div class="columns large-4">
@@ -214,11 +214,11 @@ include_once("sesion.php");
 		<div class="row">
 			<div class="columns large-4">
 		        <label for="activo_monitor">Activo del monitor.</label>
-		        <input type="text" name="activo_monitor" id="activo_monitor" value="" placeholder="Obligatorio activo monitor">
+		        <input type="text" name="activo_monitor" id="activo_monitor" style="text-transform: uppercase;" value="" placeholder="Obligatorio activo monitor">
 		    </div>
 		    <div class="columns large-4">
 		        <label for="serial_monitor">Serial del monitor.</label>
-		        <input type="text" name="serial_monitor" id="serial_monitor" value="" placeholder="Obligatorio serial monitor">
+		        <input type="text" name="serial_monitor" id="serial_monitor" style="text-transform: uppercase;" value="" placeholder="Obligatorio serial monitor">
 		    </div>
 			<div class="columns large-4" id="capa_select_estado">
 		        <label for="proceso_equipo">Estado actual del equipo.</label>
@@ -292,11 +292,11 @@ include_once("sesion.php");
 
 			<div class="columns large-4">
 		        <label for="activo_equipo_retirar">Activo equipo a retirar</label>
-		        <input type="text" name="activo_equipo_retirar" id="activo_equipo_retirar" value="" placeholder="Opcional">
+		        <input type="text" name="activo_equipo_retirar" id="activo_equipo_retirar" style="text-transform: uppercase;" value="" placeholder="Opcional">
 		    </div>
 		    <div class="columns large-4">
 		        <label for="activo_monitor_retirar">Activo del monitor a retirar</label>
-		        <input type="text" name="activo_monitor_retirar" id="activo_monitor_retirar" value="" placeholder="Opcional">
+		        <input type="text" name="activo_monitor_retirar" id="activo_monitor_retirar" style="text-transform: uppercase;" value="" placeholder="Opcional">
 		    </div>
 
 		</div>
@@ -310,15 +310,15 @@ include_once("sesion.php");
 	      	<h4>Informacion del usuario del equipo </h4>
 		   	<div class="columns large-4">
 		        <label for="responsable">Responsable</label>
-		    	<input type="text" name="responsable" id="responsable" value="" placeholder="Obligatorio responsable del equipo">
+		    	<input type="text" name="responsable" id="responsable" style="text-transform: uppercase;" value="" placeholder="Obligatorio responsable del equipo">
 		    </div>
 	   		<div class="columns large-3">
 	        	<label for="usuario">Usuario</label >
-	        	<input type="text" name="usuario" id="usuario" value="" placeholder="Obligatorio usuario del equipo">
+	        	<input type="text" name="usuario" id="usuario" value="" style="text-transform: uppercase;" placeholder="Obligatorio usuario del equipo">
 	      	</div>
 		    <div class="columns large-2">
 		    	<label for="ext_tel">Extension telefónica </label>
-		        <input type="text" name="ext_tel" id="ext_tel" value="" placeholder="Obligatorio ext telefonica">
+		        <input type="text" name="ext_tel" id="ext_tel" value="" style="text-transform: uppercase;" placeholder="Obligatorio ext telefonica">
 		    </div>
 		    <div class="columns large-3">
 		    	<label for="f_ult_actualizacion">F-Ult-Actualización</label>
@@ -352,15 +352,15 @@ include_once("sesion.php");
 		    <h4> Información de la ubicación del equipo</h4>
 	    	<div class="columns large-4">
 		        <label for="bloque">Bloque</label>
-		        <input type="text" name="bloque" id="bloque" value="" placeholder="Obligatorio bloque">
+		        <input type="text" name="bloque" id="bloque" style="text-transform: uppercase;" value="" placeholder="Obligatorio bloque">
 		    </div>
 		    <div class="columns large-4">
 		        <label for="piso">Piso</label>
-		        <input type="text" name="piso" id="piso"  value="" placeholder="Obligatorio piso">
+		        <input type="text" name="piso" id="piso"  style="text-transform: uppercase;" value="" placeholder="Obligatorio piso">
 		    </div>
 		    <div class="columns large-4">
 		        <label for="cubiculo">Cubiculo</label>
-		        <input type="text" name="cubiculo" id="cubiculo" value="" placeholder="Obligatorio cubiculo">
+		        <input type="text" name="cubiculo" id="cubiculo" style="text-transform: uppercase;" value="" placeholder="Obligatorio cubiculo">
 		    </div>
 
 	    </div>
@@ -376,17 +376,17 @@ include_once("sesion.php");
 
 		    <div class="columns large-3">
 		        <label for="dir_mac">Dirección Mac del pc</label>
-		        <input type="text" name="dir_mac" id="dir_mac" value="AA-AA-AA-AA-AA-AA" onkeypress="return solohexadecimal(event)" style="color: blue; font-family: Verdana; border-color:red; font-weight: bold; font-size: 15px" placeholder="Obligatorio Mac">
+		        <input type="text" name="dir_mac" id="dir_mac" style="text-transform: uppercase;" value="AA-AA-AA-AA-AA-AA" onkeypress="return solohexadecimal(event)" style="color: blue; font-family: Verdana; border-color:red; font-weight: bold; font-size: 15px" placeholder="Obligatorio Mac">
 		    </div>
 
 		    <div class="columns large-2">
 		        <label for="punto_de_red">Punto de red.</label>
-		        <input type="text" name="punto_de_red" id="punto_de_red" value="NO TIENE" onkeypress="return letrasynumeros(event)"  style="color: blue; font-family: Verdana; border-color:red; font-weight: bold; font-size: 15px" placeholder="Obligatorio punto de red">
+		        <input type="text" name="punto_de_red" id="punto_de_red" style="text-transform: uppercase;" value="NO TIENE" onkeypress="return letrasynumeros(event)"  style="color: blue; font-family: Verdana; border-color:red; font-weight: bold; font-size: 15px" placeholder="Obligatorio punto de red">
 		    </div>
 
  			<div class="columns large-2">
 		        <label for="ot_sigma">Ot de Aranda.</label>
-		        <input type="text" name="ot_sigma" id="ot_sigma" value="" style="color: blue; font-family: Verdana; border-color:red; font-weight: bold; font-size: 15px" placeholder="Obligatorio Ot de sigma">
+		        <input type="text" name="ot_sigma" id="ot_sigma" style="text-transform: uppercase;" value="" style="color: blue; font-family: Verdana; border-color:red; font-weight: bold; font-size: 15px" placeholder="Obligatorio Ot de sigma">
 		    </div>
 
 		    <marquee scrolldelay="700" scrollamount="100">
@@ -395,7 +395,7 @@ include_once("sesion.php");
 
 		    <div class="columns large-12">
 			    <label for="observaciones">Observaciones </label>
-			    <input type="text" name="observaciones" id="observaciones" value="" style="color: blue; font-family: Verdana; border-color:red; font-weight: bold; font-size: 15px" placeholder="Opcional">
+			    <input type="text" name="observaciones" id="observaciones" style="text-transform: uppercase;" value="" style="color: blue; font-family: Verdana; border-color:red; font-weight: bold; font-size: 15px" placeholder="Opcional">
 			</div>
 		</div>
 
