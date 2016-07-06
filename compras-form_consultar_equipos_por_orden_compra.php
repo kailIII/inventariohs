@@ -5,13 +5,14 @@ include_once("sesion.php");
 
 <!doctype html>
 <html class="no-js" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Consultar/ Orden de compra</title>
-  <LINK REL="SHORTCUT ICON" HREF="uninorte.ico" />
-  <link rel="stylesheet" href="css/foundation.css" />
-  <script src="js/vendor/modernizr.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consultar/ Orden de compra</title>
+    <link rel="shortcut icon" href="uninorte.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/vendor/modernizr.js"></script>
   </head>
 
 <body>

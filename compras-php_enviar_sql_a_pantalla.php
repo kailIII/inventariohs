@@ -4,12 +4,13 @@ include_once("config.php");
 <?php
 
 // ** Campos con lo que voy a realizar la consulta, los del formulario.
+$id_est = $_POST['id_est'];
 $orden_de_compra = $_POST['orden_de_compra'];
 $activo_equipo = $_POST['activo_equipo'];
 $activo_monitor = $_POST['activo_monitor'];
 $activo_equipo_a_retirar = $_POST['activo_equipo_a_retirar'];
 $activo_monitor_a_retirar = $_POST['activo_monitor_a_retirar'];
-$id_est = $_POST['id_est'];
+
 
 echo "<p>Consulta de orden de compra: $orden_de_compra </p>" ;
 

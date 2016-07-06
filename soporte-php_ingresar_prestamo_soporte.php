@@ -75,9 +75,9 @@
         //Whether to use SMTP authentication
         $mail->SMTPAuth = true;
         //Username to use for SMTP authentication
-        $mail->Username = "weromero@uninorte.edu.co";
+        $mail->Username = ($_SESSION['correo']);
         //Password to use for SMTP authentication
-        $mail->Password = "werd741110";
+        $mail->Password = base64_decode(($_SESSION['contrasena']));
         //Set who the message is to be sent from
         $mail->setFrom($_SESSION['correo'], $_SESSION['nombre']);
         //Set an alternative reply-to address

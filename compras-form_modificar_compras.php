@@ -291,7 +291,7 @@ include_once("sesion.php");
 		        <input type="text" name="activo_equipo_retirar" id="activo_equipo_retirar" value="" placeholder="Opcional">
 		    </div>
 		    <div class="columns large-4">
-		        <label for="activo_monitor_retirar">Serial del monitor.</label>
+		        <label for="activo_monitor_retirar">Activo del monitor a retirar</label>
 		        <input type="text" name="activo_monitor_retirar" id="activo_monitor_retirar" value="" placeholder="Opcional">
 		    </div>
 
@@ -381,7 +381,7 @@ include_once("sesion.php");
 		    </div>
 
  			<div class="columns large-2">
-		        <label for="ot_sigma">Ot de sigma.</label>
+		        <label for="ot_sigma">Ot de Aranda.</label>
 		        <input type="text" name="ot_sigma" id="ot_sigma" value="" style="color: blue; font-family: Verdana; border-color:red; font-weight: bold; font-size: 15px" placeholder="Obligatorio Ot de sigma">
 		    </div>
 

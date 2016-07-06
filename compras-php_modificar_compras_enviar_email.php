@@ -92,9 +92,9 @@
     //Whether to use SMTP authentication
     $mail->SMTPAuth = true;
     //Username to use for SMTP authentication
-    $mail->Username = "jlguerrero@uninorte.edu.co";
+    $mail->Username = ($_SESSION['correo']);
     //Password to use for SMTP authentication
-    $mail->Password = "sonido123";
+    $mail->Password = base64_decode(($_SESSION['contrasena']));
     //Set who the message is to be sent from
     $mail->setFrom($_SESSION['correo'], $_SESSION['nombre']);
     //Set an alternative reply-to address
@@ -111,18 +111,19 @@
     //$mail->msgHTML(file_get_contents('inicio.php'), dirname(__FILE__));
     //Replace the plain text body with one created manually
     $mail->Body =   'Por medio del presente correo, hago entrega del siguiente equipo, comprado bajo la orden de compra nro : '. "$orden_de_compra". "\r\n" . "\r\n" .
-                    'Activo del equipo      : '. "$activo_equipo"."\r\n" .
-                    'Tipo de equipo         : '. "$tipo_equipo" . "\r\n" .
-                    'Serial equipo          : '. "$serial_equipo" . "\r\n" .
-                    'Activo monitor         : '. "$activo_monitor" . "\r\n" .
-                    'Serial monitor         : '. "$serial_monitor" . "\r\n" .
-                    'Responsable del equipo : '. "$responsable". "\r\n" .
-                    'Usuario del equipo     : '. "$usuario". "\r\n" .
-                    'Bloque                 : '. "$bloque". "\r\n" .
-                    'Piso                   : '. "$piso". "\r\n" .
-                    'Ubicación              : '. "$cubiculo". "\r\n" .
-                    'Observaciones          : '. "$observaciones". "\r\n" .
-                    'Activo a retirar       : '. "$activo_equipo_retirar". "\r\n" . "\r\n" .
+                    'Activo del equipo          : '. "$activo_equipo"."\r\n" .
+                    'Tipo de equipo             : '. "$tipo_equipo" . "\r\n" .
+                    'Serial equipo              : '. "$serial_equipo" . "\r\n" .
+                    'Activo monitor             : '. "$activo_monitor" . "\r\n" .
+                    'Serial monitor             : '. "$serial_monitor" . "\r\n" .
+                    'Responsable del equipo     : '. "$responsable". "\r\n" .
+                    'Usuario del equipo         : '. "$usuario". "\r\n" .
+                    'Bloque                     : '. "$bloque". "\r\n" .
+                    'Piso                       : '. "$piso". "\r\n" .
+                    'Ubicación                  : '. "$cubiculo". "\r\n" .
+                    'Observaciones              : '. "$observaciones". "\r\n" .
+                    'Activo a retirar           : '. "$activo_equipo_retirar". "\r\n" . 
+                    'Activo monitor a retirar   : '. "$activo_monitor_retirar". "\r\n" . "\r\n" .
                     'El activo se entrega en perfectas condiciones.'. "\r\n" .
                     'Este E-mail es enviado automáticamente desde el sistema de inventario de equipos del Laboratorio de Micros.' ;
 
