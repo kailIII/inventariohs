@@ -44,6 +44,8 @@ $('#consultar').click(
               $('#estado_puerto_sw').val( data['estado_puerto_sw'] );
               $('#estado_punto_de_red').val( data['estado_punto_de_red'] );
               $('#tipo_de_punto_de_red').val( data['tipo_de_punto_de_red'] );
+              $('#color_toma').val( data['color_toma'] );
+              $('#categoria_punto_de_red').val( data['categoria_punto_de_red'] );
 
               $('#responsable').val( data['responsable'] );
               $('#email_responsable').val( data['email_responsable'] );

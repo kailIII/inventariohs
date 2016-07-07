@@ -21,6 +21,7 @@ $('#consultar_punto_de_red').click(
         $('#tipo_de_punto_de_red').val( data['tipo_de_punto_de_red'] );
         $('#categoria_punto_de_red').val( data['categoria_punto_de_red'] );
         $('#estado_punto_de_red').val( data['estado_punto_de_red'] );
+        $('#color_toma').val( data['color_toma'] );
 
         $('#seleccionar_switches_puertos').val( data['bit_sw_id'] );
         $('#sw_id').val( data['sw_id'] );
@@ -29,8 +30,7 @@ $('#consultar_punto_de_red').click(
         $('#punto_de_red_actual').val( data['punto_de_red_actual'] );
         $('#vlan_puerto_sw').val( data['vlan_puerto_sw'] );
         $('#estado_puerto_sw').val( data['estado_puerto_sw'] );
-        $('#color_toma').val( data['color_toma'] );
-
+       
         $('#res').html("---- Consulta de punto de red exitosa. ----");
         $('#res').css('color','yellow');
       }
@@ -172,6 +172,13 @@ $('#ingresar_punto_de_red').click(
     }
     else{
       var categoria_punto_de_red = $('#categoria_punto_de_red').val();
+    }
+    if($('#color_toma').val()==""){
+      alert("Introduce la categoria del punto de red");
+      return false;
+    }
+    else{
+      var color_toma = $('#color_toma').val();
     }
 
         $.ajax({

@@ -208,8 +208,16 @@ include_once("sesion.php");
       </div>
 
       <div class="columns large-2">
-         <label for="estado_puerto_sw">Estado P. Sw</label>
+         <label for="estado_puerto_sw">Estado Puerto Sw</label>
         <input type="text" name="estado_puerto_sw" id="estado_puerto_sw" value="" placeholder="Obligatorio estado puerto sw" style="text-transform:uppercase;">
+      </div>
+      <!--     ****************************    OCULTOS    ***********************  -->
+      <div class="columns large-2">
+        <input type="hidden" name="color_toma" id="color_toma" value="" placeholder="Suministrada por el sistema">
+      </div>
+
+      <div class="columns large-2">
+        <input type="hidden" name="categoria_punto_de_red" id="categoria_punto_de_red" value="" placeholder="Suministrada por el sistema">  
       </div>
 
       <div class="columns large-3">
@@ -217,6 +225,14 @@ include_once("sesion.php");
         <input type="hidden" name="punto_de_red_actual" id="punto_de_red_actual" value="" placeholder="punto de red actual" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">      
       </div>
 
+      <div class="columns large-2">
+        <input type="hidden" name="tipo_de_punto_de_red" id="tipo_de_punto_de_red" value="" placeholder="Obligatorio tipo de punto de red" style="text-transform:uppercase;">      
+      </div>
+
+      <div class="columns large-2">
+        <input type="hidden" name="estado_punto_de_red" id="estado_punto_de_red" value="" placeholder="Obligatorio estado punto de red" style="text-transform:uppercase;">      
+      </div>
+       <!--     ****************************   FIN DE  OCULTOS    ***********************  -->
 
       <div class="columns large-2">
         <!-- <label for="puerto_sw">Puerto del sw.</label> -->
@@ -224,16 +240,7 @@ include_once("sesion.php");
       </div>
 
   </div>
-
-      <div class="columns large-2">
-        
-        <input type="hidden" name="tipo_de_punto_de_red" id="tipo_de_punto_de_red" value="" placeholder="Obligatorio tipo de punto de red" style="text-transform:uppercase;">      
-      </div>
-
-      <div class="columns large-2">
-        
-        <input type="hidden" name="estado_punto_de_red" id="estado_punto_de_red" value="" placeholder="Obligatorio estado punto de red" style="text-transform:uppercase;">      
-      </div>
+      
     </div>
 
     <div class="row">

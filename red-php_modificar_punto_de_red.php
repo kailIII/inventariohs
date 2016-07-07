@@ -19,7 +19,7 @@
             $cubiculo = strtoupper($_POST['cubiculo']);
             $estado_punto_de_red = strtoupper($_POST['estado_punto_de_red']);
             $color_toma = strtoupper($_POST['color_toma']);
-            $categoria_punto_de_red = $_POST['categoria_punto_de_red'];
+            $categoria_punto_de_red = strtoupper($_POST['categoria_punto_de_red']);
             $tipo_de_punto_de_red = strtoupper($_POST['tipo_de_punto_de_red']);
 
             $query = "UPDATE bitacora_switches SET vlan='$vlan_puerto_sw',  punto_de_red='$punto_de_red_actual', estado_puerto_sw='$estado_puerto_sw' WHERE bit_sw_id='$bit_sw_id' ";

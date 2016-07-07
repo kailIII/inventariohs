@@ -29,10 +29,10 @@
 
         $registro         = mysql_fetch_array($resultado);
 
-        $consulta_punto_de_red['bit_sw_id'] = $registro['bit_sw_id'];  
-        $consulta_punto_de_red['sw_id']     = $registro['sw_id'];  
-        $consulta_punto_de_red['dir_ip_sw'] = $registro['dir_ip_sw'];
-        $consulta_punto_de_red['unidad']    = $registro['unidad'];
+        $consulta_punto_de_red['bit_sw_id']             = $registro['bit_sw_id'];  
+        $consulta_punto_de_red['sw_id']                 = $registro['sw_id'];  
+        $consulta_punto_de_red['dir_ip_sw']             = $registro['dir_ip_sw'];
+        $consulta_punto_de_red['unidad']                = $registro['unidad'];
         $consulta_punto_de_red['punto_de_red_actual']   = $registro['punto_de_red'];
         $consulta_punto_de_red['puerto_sw']             = $registro['puerto_sw'];
         $consulta_punto_de_red['vlan_puerto_sw']        = $registro['vlan'];
@@ -40,9 +40,9 @@
 
 
         
-        $consulta_punto_de_red['bloque']    = $registro['bloque'];
-        $consulta_punto_de_red['piso']      = $registro['piso'];
-        $consulta_punto_de_red['cubiculo']  = $registro['cubiculo'];
+        $consulta_punto_de_red['bloque']                    = $registro['bloque'];
+        $consulta_punto_de_red['piso']                      = $registro['piso'];
+        $consulta_punto_de_red['cubiculo']                  = $registro['cubiculo'];
         $consulta_punto_de_red['estado_punto_de_red']       = $registro['estado_punto_de_red'];
         $consulta_punto_de_red['color_toma']                = $registro['color_toma'];
         $consulta_punto_de_red['tipo_de_punto_de_red']      = $registro['tipo_de_punto_de_red'];
