@@ -12,6 +12,8 @@ include_once("sesion.php");
    <Link rel ="shortcut icon" href="uninorte.ico" />
   <link rel="stylesheet" href="css/foundation.css" />
   <script src="js/vendor/modernizr.js"></script>
+
+
 </head>
 <body>
     <div class="row">
@@ -45,7 +47,6 @@ include_once("sesion.php");
     </section>
   </nav>
 
-  <br>
 
  <!-- ******************************************** INFORMACION DEL USUARIO QUE PRESTA LAS LLAVES ************************************** -->
           <div class="row">
@@ -136,9 +137,7 @@ include_once("sesion.php");
                         $conexion = mysql_connect($server,$username,$password);
                         mysql_set_charset('utf8',$conexion);
                         mysql_select_db($database);
-                         //$sw_id     = $_POST['sw_id'];
-                         // $dir_ip_sw = $_POST['dir_ip_sw'];
-                        //  $unidad    = $_POST['unidad'];
+
                         $query = "SELECT id_correo, nombres, area, cargo, ext, correo FROM correo ORDER BY nombres ";
 
                         $resultado = mysql_query($query,$conexion);
@@ -204,7 +203,7 @@ include_once("sesion.php");
             </div>
           </div>
 
-<!-- ******************************************** INFORMACION DE FECHA DE ENTREGA DE LAS LLAVES ************************************************** -->
+<!-- ******************************************** INFORMACION DE FECHA DE ENTREGA DEL EQUIPO  ************************************************** -->
 
           <div class="row">
             <h4>Información fecha de entrega y fecha limite.</h4>
@@ -222,7 +221,7 @@ include_once("sesion.php");
               <input type="hidden" name="aaa" id="aaa" placeholder="Obligatorio fecha ">
             </div>
           </div>
-<!-- ******************************************** FIN DE INFORMACION DE FECHA DE ENTREGA DE LAS LLAVES ****************************** -->
+<!-- ******************************************** FIN DE INFORMACION DE FECHA DE ENTREGA DEL EQUIPO  ****************************** -->
 <!-- ********************************************************** BOTONES ************************************************************* -->
         <div class="row">
           <div class="columns large-2">

@@ -36,6 +36,7 @@ include_once("sesion.php");
       </li>
         <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
     </ul>
+
     <section class="top-bar-section">
       <span id="res"></span>
       <!-- Right Nav Section  menu lado derecho-->
@@ -45,6 +46,9 @@ include_once("sesion.php");
     </section>
   </nav>
 
+
+
+<!-- ******************************************** INFORMACION DEL EQUIPO  ************************************** -->
   <form name="form_activo" id="form_activo" method="post" action="">
     <div class="row">
       <h4>Informacion del equipo</h4>
