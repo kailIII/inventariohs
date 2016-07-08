@@ -1,6 +1,7 @@
     <?php
         include('config.php');
         include_once("sesion.php");
+        
         require 'phpmailer/PHPMailerAutoload.php';
         header('Content-Type: application/json');
         
@@ -61,9 +62,9 @@
         //Password to use for SMTP authentication
         $mail->Password = base64_decode(($_SESSION['contrasena']));
         //Set who the message is to be sent from
-        $mail->setFrom('weromero@uninorte.edu.co', 'Winston Elias Romero Duarte');
+        $mail->setFrom($_SESSION['correo'], $_SESSION['nombre']);
         //Set an alternative reply-to address
-        $mail->addReplyTo('weromero@uninorte.edu.co', 'Winston Elias Romero Duarte');
+        $mail->addReplyTo($_SESSION['correo'], $_SESSION['nombre']);
         //Set who the message is to be sent to
         $mail->addAddress("$correo", "$cliente");
         $mail->AddCC("weromero@uninorte.edu.co", "Winston Elias Romero Duarte");
