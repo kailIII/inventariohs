@@ -3,13 +3,13 @@ include_once("config.php");
 include_once("sesion.php");
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Activo - Ingresar / Modificar</title>
-  <Link rel ="shortcut icon" href="uninorte.ico" type="image/x-icon"/> 
+  <Link rel ="shortcut icon" href="images/icons/uninorte.ico" type="image/x-icon"/> 
   <link rel="stylesheet" href="css/foundation.css" />
   <script src="js/vendor/modernizr.js"></script>
 
