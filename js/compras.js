@@ -242,7 +242,7 @@ $('#btningresar_compra').click(
         activo_equipo_retirar:activo_equipo_retirar,
         activo_monitor_retirar:activo_monitor_retirar,
         id_pro:id_pro,
-        proceso_equipo_retirar:proceso_equipo_retirar,
+        //proceso_equipo_retirar:proceso_equipo_retirar,
         responsable:responsable,
         usuario:usuario,
         ext_tel:ext_tel,
