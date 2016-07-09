@@ -4,25 +4,28 @@ include_once("config.php");
 include_once("sesion.php");
 ?>
 
-<!-- ************************************* Formularios que se trabajan aqui ******************************************* -->
+<!-- ************************************************ Formularios que se trabajan aqui ***************************************************** -->
+
 <!-- ************************************* Formulario switches-form_ingresar_switches.php *************************************** -->
-<!-- *************************************  switches-php_combo_switches.php *************************************** -->
-<!-- *************************************  switches-php_combo_puerto_switches.php *************************************** -->
+<!-- *************************************  *************************************** -->
+<!-- ************************************* *************************************** -->
 
 <!DOCTYPE html>
 <html class="no-js" lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Switches / Ingresar / Modificar</title> 
-    <Link rel ="shortcut icon" href="images/icons/uninorte.ico" type="image/x-icon"/> 
-    <link rel="stylesheet" href="css/foundation.css" />
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/vendor/modernizr.js"></script>
-    <script src="js/switches.js"></script>
+    <title>Switches / Ingresar / Modificar</title> <!-- Nombre prestaña -->
+    <Link rel ="shortcut icon" href="images/icons/uninorte.ico" type="image/x-icon"/>  <!-- Icono prestaña -->
+    <link rel="stylesheet" href="css/foundation.css" />  <!-- Css Fundattion  -->
+    <script src="js/vendor/jquery.js"></script> <!-- Clases y Rutinas de JavaScript  -->
+    <script src="js/foundation.min.js"></script> <!-- Clases y Rutinas de JavaScript  -->
+    <script src="js/vendor/modernizr.js"></script> <!-- Clases y Rutinas de JavaScript  -->
+    <script src="js/switches.js"></script>  <!-- Clases y Rutinas de JavaScript  Switches-->
   </head>
   <body>
+  
+
         <div class="row">
           <div class="columns large-10">
             <h1>
@@ -33,23 +36,28 @@ include_once("sesion.php");
 
           </div>
         </div>
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <!-- Titulo del Menu -->
-          <h1><a href="#">Inventario de Hardware</a></h1>
-        </li>
-          <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-      </ul>
-
-      <section class="top-bar-section">
-        <!-- Right Nav Section  menu lado derecho-->
-        <ul class="right">
-            <li><a href="inicio.php">Inicio</a></li>
-        </ul>
-      </section>
-    </nav>
-
+   
+        <div class ="contain-to-grid sticky">
+          <nav class="top-bar" data-topbar> <!-- Menú de navegación  -->
+            <ul class="title-area">
+              <li class="name">
+                <h1><a href="#">Inventario de Hardware</a></h1> <!-- Titulo menú de navegación  -->
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li> 
+            </ul>
+            <section class="top-bar-section">
+              <ul class="right">
+                  <li class="has-dropdown"><a href="#">Inicio</a> <!-- Menu lado derecho -->
+                    <ul class="dropdown">
+                      <li><a href="#">Item 1A</a></li>
+                      <li><a href="#">Item 2A</a></li>
+                      <li><a href="#">Item 3A</a></li>
+                    </ul>
+                  </li>
+              </ul>
+            </section>
+          </nav>
+        </div>
     <form class="" action="" method="post" name="switches-form_ingresar_switches">
           <div class="row">
               <h4>Informacion del Switch</h4>
@@ -204,6 +212,14 @@ include_once("sesion.php");
               </div>
           </div>
     </form>
+    
+    <div class="row"> 
+      <div id="pie_de_pagina" class="columns large-6">
+    </div>
+      <div id="pie_de_pagina" class="columns large-6">
+            Copyright Winston Romero - Barranquilla - Colombia  - 2016
+      </div>
+    </div>
   <!--******************************************** FIN DE TODOS CAMPOS DE LA CONSULTA DEL ACTIVO ************************************* -->
 
     <script src="js/vendor/jquery.js"></script>
