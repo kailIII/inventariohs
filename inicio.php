@@ -27,6 +27,7 @@ include_once("sesion.php");
       </div>
 
       <div class ="contain-to-grid sticky">
+
           <nav class="top-bar" data-topbar> <!-- Menú de navegación  -->
             
             <ul class="title-area">
@@ -72,6 +73,13 @@ include_once("sesion.php");
                           <li><a href="switches-form_ingresar_switches.php" >Ingresar / Modificar</a></li>
                           <li><a href="switches-form_consultar_switches.php" >Consultar</a></li>
                         </ul>
+                      </li>
+
+                      <li class="has-dropdown"><a href="#">Bitacoras Exportar</a> <!-- Menu lado derecho -->
+                      <ul class="dropdown">
+                        <li><a href="red-php_generar_bitacora_excel_punto_de_red.php"  >Bitacora por puntos de red</a></li>
+                        <li><a href="red-php_generar_bitacora_excel_por_switches.php"  >Bitacora por switches</a></li>
+                      </ul>
                       </li>
 
                     </ul>
@@ -137,66 +145,37 @@ include_once("sesion.php");
         <div class="row">
           <div class="columns large-12">
             <form method="post" action="">
-                <div class="row">
-                 <!-- A default button-group with small buttons inside -->
-                  <ul class="button-group">
-                    <div class="columns large-3">
-                      <h4>Modulo de Activos</h4>
-                      <h4>Ingresar / Modificar</h4>
-                      <li><a href="activo-form_ingresar_activo.php" class="button">Ingresar / Modificar equipo por activo</a></li>
-                      <li><a href="activo-form_exportar_reubicacion.php" class="button">Exportar equipo reubicado</a></li>
-                      <h4>Consulta de activos</h4>
-                      <li><a href="activo-form_consultar_activo.php" class="button">Consultar un equipo por su activo</a></li>
-                      <li><a href="activo-form_consultar_equipos_por_ubicacion.php" class="button">Consultar equipo por ubicacion.</a></li>
-                      <!-- <li><a href="frmmodificar_equipo.php" class="button">Modificar Información de Orden de Compra</a></li> -->
-                    </div>
+                
+                <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play="true">
+                 
+                  <li class="orbit-slide">
+                    <img class="orbit-image" src="images/orbit/01.jpg" alt="Space" data-timer-delay="1000">
+                  <!--   <figcaption class="orbit-caption">Space, the final frontier.</figcaption> -->
+                  </li>
+                  
+                  <li class="orbit-slide">
+                    <img class="orbit-image" src="images/orbit/03.jpg" alt="Space" data-timer-delay="1000">
+                   <!--  <figcaption class="orbit-caption">Encapsulating</figcaption> -->
+                  </li>
+                  
+                  <li class="orbit-slide">
+                    <img class="orbit-image" src="images/orbit/04.jpg" alt="Space">
+                   <!--  <figcaption class="orbit-caption">Outta This World</figcaption> -->
+                  </li>
 
-                    <div class="columns large-3">
-                      <h4>Modulo de Llaves</h4>
-                      <h4>Ingresar / Modificar</h4>
-                      <li><a href="llaves-form_ingresar_prestamo.php" class="button">Ingresar prestamo de llaves al sistema</a></li>
-                      <h4>Consulta Prestamos</h4>
-                      <li><a href="llaves-form_consultar_prestamo.php" class="button">Consultar / Recibir llaves en Lab Micros..</a></li>
-                    </div>
+                  <li class="orbit-slide">
+                    <img class="orbit-image" src="images/orbit/02.jpg" alt="Space">
+                   <!--  <figcaption class="orbit-caption">Lets Rocket!</figcaption> -->
+                  </li>
 
-                    <div class="columns large-3">
-                      <h4>Modulo P. de red</h4>
-                      <h4>Ingresar / Modificar</h4>
-                      <li><a href="red-form_ingresar_punto_de_red.php" class="button">Consultar / Modificar Punto de red</a></li>
-                      <li><a href="red-form_ingresar_punto_de_red_por_lotes.php" class="button">Ingresar Puntos de red por lotes</a></li>
-
-                      <h4>Modulo Switches</h4>
-                      <li><a href="switches-form_ingresar_switches.php" class="button">Ingresar Switches</a></li>
-                      <li><a href="switches-form_consultar_switches.php" class="button">Consultar Switches</a></li>
-
-                      <h4>Exportar a Excel</h4>
-                      <!-- <li><a href="excel.php" class="button">Generar bitacora por puntos de red</a></li>-->
-                      <li><a href="red-php_generar_bitacora_excel_punto_de_red.php" class="button">Generar bitacora por puntos de red</a></li>
-                      <li><a href="red-php_generar_bitacora_excel_por_switches.php" class="button">Generar bitacora por switches</a></li>
-
-                      <!-- <h4>Exportar a Pdf</h4> -->
-                      <!-- <li><a href="excel.php" class="button">Generar bitacora por puntos de red</a></li>-->
-                    <!--   <li><a href="red-php_generar_bitacora_pdf_punto_de_red.php" class="button">Generar bitacora por puntos de red</a></li>
-                      <li><a href="red-php_generar_bitacora_pdf_por_switches.php" disabled class="button">Generar bitacora por switches</a></li> -->
-
-                    </div>
-
-                    <div class="columns large-3">
-                      <h4>Modulo de Entrega </h4>
-                      <h4>de Equipos </h4>
-                      <li><a href="compras-form_compras.php" class="button">Modulo de Compras y Reubicaciones</a></li>
-                      <li><a href="frmbitacora.php" class="button">Consultar Bitacora del Equipo.</a></li>
-                    </div>
-
-                    <div class="columns large-3">
-                      <h4>Modulo de Prestamo </h4>
-                      <h4>de Eq.de Soporte</h4>
-                      <li><a href="soporte-form_inicio_soporte.php" class="button">Modulo de Soporte equipos</a></li>
-                    </div>
-
-                  </ul>
+                  <li class="orbit-slide is-active">
+                    <img class="orbit-image" src="images/orbit/04.jpg" alt="Space">
+                   <!--  <figcaption class="orbit-caption">Outta This World</figcaption> -->
+                  </li>     
+                
                 </div>
-            </form>
+
+           </form>
           </div>
         </div>
           <script src="js/vendor/jquery.js"></script>
