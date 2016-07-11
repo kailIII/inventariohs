@@ -135,6 +135,7 @@ include_once("sesion.php");
 
                     </ul>
                   </li>
+                  <li><a href="form_mantenimiento.php">Mantto</a></li>
                   <li><a href="acceso-php_logout.php">Cerrar sesion</a></li>
 
               </ul>
@@ -154,22 +155,22 @@ include_once("sesion.php");
                   </li>
                   
                   <li class="orbit-slide">
-                    <img class="orbit-image" src="images/orbit/03.jpg" alt="Space" data-timer-delay="1000">
+                    <img class="orbit-image" src="images/orbit/02.jpg" alt="Space" data-timer-delay="1000">
                    <!--  <figcaption class="orbit-caption">Encapsulating</figcaption> -->
                   </li>
                   
                   <li class="orbit-slide">
-                    <img class="orbit-image" src="images/orbit/04.jpg" alt="Space">
+                    <img class="orbit-image" src="images/orbit/03.jpg" alt="Space" data-timer-delay="1000">
                    <!--  <figcaption class="orbit-caption">Outta This World</figcaption> -->
                   </li>
 
                   <li class="orbit-slide">
-                    <img class="orbit-image" src="images/orbit/02.jpg" alt="Space">
+                    <img class="orbit-image" src="images/orbit/04.jpg" alt="Space" data-timer-delay="1000">
                    <!--  <figcaption class="orbit-caption">Lets Rocket!</figcaption> -->
                   </li>
 
                   <li class="orbit-slide is-active">
-                    <img class="orbit-image" src="images/orbit/04.jpg" alt="Space">
+                    <img class="orbit-image" src="images/orbit/05.jpg" alt="Space" data-timer-delay="1000">
                    <!--  <figcaption class="orbit-caption">Outta This World</figcaption> -->
                   </li>     
                 
