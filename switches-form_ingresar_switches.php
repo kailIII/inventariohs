@@ -17,6 +17,7 @@ include_once("sesion.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Switches / Ingresar / Modificar</title> <!-- Nombre prestaña -->
     <Link rel ="shortcut icon" href="images/icons/uninorte.ico" type="image/x-icon"/>  <!-- Icono prestaña -->
+    <link rel="stylesheet" href="css/app.css" />  <!-- Css Fundattion  -->
     <link rel="stylesheet" href="css/foundation.css" />  <!-- Css Fundattion  -->
     <script src="js/vendor/jquery.js"></script> <!-- Clases y Rutinas de JavaScript  -->
     <script src="js/foundation.min.js"></script> <!-- Clases y Rutinas de JavaScript  -->
@@ -37,16 +38,19 @@ include_once("sesion.php");
           </div>
         </div>
    
-        <div class ="contain-to-grid sticky">
+      <div class ="contain-to-grid sticky">
           <nav class="top-bar" data-topbar> <!-- Menú de navegación  -->
+            
             <ul class="title-area">
               <li class="name">
                 <h1><a href="#">Inventario de Hardware</a></h1> <!-- Titulo menú de navegación  -->
               </li>
               <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li> 
             </ul>
+
             <section class="top-bar-section">
               <ul class="right">
+                  <li><a href="inicio.php">Inicio</a></li>
                   <li class="has-dropdown"><a href="#">Activos</a> <!-- Menu lado derecho -->
                     <ul class="dropdown">
                       <li><a href="activo-form_ingresar_activo.php" >Ingresar / Modificar</a></li>
@@ -58,17 +62,30 @@ include_once("sesion.php");
 
                   <li class="has-dropdown"><a href="#">Redes</a> <!-- Menu lado derecho -->
                     <ul class="dropdown">
-                      <li><a href="#" >*** Menu de Llaves ***</a></li>
-                       <li><a href="llaves-form_ingresar_prestamo.php" >Ingresar Prestamo</a></li>
-                      <li><a href="llaves-form_consultar_prestamo.php" >Consultar y Recibir</a></li>
-
-                      <li><a href="#" >*** Menu Puntos de red ***</a></li>
-                      <li><a href="red-form_ingresar_punto_de_red.php" >Ingresar Puntos de red</a></li>
-                      <li><a href="red-form_ingresar_punto_de_red_por_lotes.php" >Consultar / Modificar</a></li>
                       
-                      <li><a href="#" >*** Menu de Switches ***</a></li>
-                      <li><a href="switches-form_ingresar_switches.php" >Ingresar / Modificar</a></li>
-                      <li><a href="switches-form_consultar_switches.php" >Consultar</a></li>
+                      <li class="has-dropdown"><a href="#">Prestamo de Llaves</a> <!-- Menu lado derecho -->
+                        <ul class="dropdown">
+                          <li><a href="llaves-form_ingresar_prestamo.php" >Ingresar Prestamo</a></li>
+                          <li><a href="llaves-form_consultar_prestamo.php" >Consultar y Recibir</a></li>
+                        </ul>
+                      </li>
+
+                    
+                      <li class="has-dropdown"><a href="#">Puntos de red</a> <!-- Menu lado derecho -->
+                        <ul class="dropdown">
+                          <li><a href="red-form_ingresar_punto_de_red.php" >Ingresar Puntos de red</a></li>
+                          <li><a href="red-form_ingresar_punto_de_red_por_lotes.php" >Consultar / Modificar</a></li>
+                        </ul>
+                      </li>
+
+
+                      <li class="has-dropdown"><a href="#">Switches</a> <!-- Menu lado derecho -->
+                        <ul class="dropdown">
+                          <li><a href="switches-form_ingresar_switches.php" >Ingresar / Modificar</a></li>
+                          <li><a href="switches-form_consultar_switches.php" >Consultar</a></li>
+                        </ul>
+                      </li>
+
                     </ul>
                   </li>
 
@@ -91,22 +108,34 @@ include_once("sesion.php");
                     </ul>
                   </li>
 
-                  <li class="has-dropdown"><a href="#">Soportes y Alquilados</a> <!-- Menu lado derecho -->
+                  <li class="has-dropdown"><a href="#">Soportes</a> <!-- Menu lado derecho -->
                     <ul class="dropdown">
-                      <li><a href="#" >*** Equipos de Soporte ***</a></li>
-                      <li><a href="soporte-form_ingresar_activo_soporte_a_bodega.php" >Ingresar Equipo Soporte a Bodega</a></li>
-                      <li><a href="soporte-form_ingresar_prestamo_equipo_soporte.php" >Prestar Equipo de Soporte por Nro de Activo</a></li>
-                      <li><a href="soporte-form_consultar_equipos_soporte_en_prestamo.php" >Consultar y recibir Equipos Prestados</a></li>
-
-                      <li><a href="#" >*** Equipos Alquilados ***</a></li>
-                      <li><a href="alquilado-form_ingresar_activo_alquilado_a_bodega.php" >Ingresar Nuevo Equipo Alquilado a Bodega</a></li>
-                      <li><a href="alquilado-form_ingresar_prestamo_equipo_alquilado.php" >Prestar Equipo de Alquilado por Nro de Activo</a></li>
-                      <li><a href="soporte-form_consultar_equipos_soporte_en_prestamo.php" >Consultar y recibir Equipos Alquilados</a></li>
                       
-                      <li><a href="#" >*** Switches de Soporte ***</a></li>
-                      <li><a href="soporte-form_ingresar_activo_soporte_a_bodega.php" >Ingresar Nuevo Switch de Soporte a Bodega</a></li>
-                      <li><a href="soporte-form_ingresar_prestamo_soporte_switch.php" >Prestar Switch por Nro de Activo</a></li>
-                      <li><a href="soporte-form_consultar_equipos_soporte_en_prestamo.php" >Consultar y recibir Switches Prestados</a></li>
+                      <li class="has-dropdown"><a href="#">Equipos de Soporte</a> <!-- Menu lado derecho -->
+                        <ul class="dropdown">
+                          <li><a href="soporte-form_ingresar_activo_soporte_a_bodega.php" >Ingresar Equipo Soporte a Bodega</a></li>
+                          <li><a href="soporte-form_ingresar_prestamo_equipo_soporte.php" >Prestar Equipo de Soporte por Nro de Activo</a></li>
+                          <li><a href="soporte-form_consultar_equipos_soporte_en_prestamo.php" >Consultar y recibir Equipos Prestados</a></li>
+                        </ul>
+                      </li>
+
+
+                      <li class="has-dropdown"><a href="#">Equipos Alquilados</a> <!-- Menu lado derecho -->
+                        <ul class="dropdown">
+                          <li><a href="alquilado-form_ingresar_activo_alquilado_a_bodega.php" >Ingresar Nuevo Equipo Alquilado a Bodega</a></li>
+                          <li><a href="alquilado-form_ingresar_prestamo_equipo_alquilado.php" >Prestar Equipo de Alquilado por Nro de Activo</a></li>
+                          <li><a href="soporte-form_consultar_equipos_soporte_en_prestamo.php" >Consultar y recibir Equipos Alquilados</a></li>
+                        </ul>
+                      </li>
+
+
+                      <li class="has-dropdown"><a href="#">Switches de Soporte</a> <!-- Menu lado derecho -->
+                        <ul class="dropdown">
+                          <li><a href="soporte-form_ingresar_activo_soporte_a_bodega.php" >Ingresar Nuevo Switch de Soporte a Bodega</a></li>
+                          <li><a href="soporte-form_ingresar_prestamo_soporte_switch.php" >Prestar Switch por Nro de Activo</a></li>
+                          <li><a href="soporte-form_consultar_equipos_soporte_en_prestamo.php" >Consultar y recibir Switches Prestados</a></li>
+                        </ul>
+                      </li>
 
                     </ul>
                   </li>
@@ -115,7 +144,8 @@ include_once("sesion.php");
               </ul>
             </section>
           </nav>
-        </div>
+      </div>
+
     <form class="" action="" method="post" name="switches-form_ingresar_switches">
           <div class="row">
               <h4>Informacion del Switch</h4>
