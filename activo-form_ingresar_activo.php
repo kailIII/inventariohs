@@ -16,6 +16,7 @@ include_once("sesion.php");
 
 </head>
 <body>
+  
   <div class="row">
     <div class="columns large-10">
       <h1>
