@@ -118,7 +118,7 @@ class Cliente
 		{
 			$obj_cliente=new sQuery();
 			// ejecuta la consulta para traer informacion de prestamo
-			$obj_cliente->executeQuery("SELECT id,activo_equipo,f_prestamo,f_limite,f_recibido,activo_danado,bloque,piso,cubiculo,departamento,usuario_equipo,email_usuario,ext_tel,ot_sigma,usuario_tecnico,email_usuario_tecnico,usuario_que_presta_soporte,observaciones	FROM prestamo_soportes where f_recibido='0000-00-00 00:00:00'");
+			$obj_cliente->executeQuery("SELECT id,activo_equipo,tipo_equipo,f_prestamo,f_limite,f_recibido,activo_danado,bloque,piso,cubiculo,departamento,usuario_equipo,email_usuario,ext_tel,ot_sigma,usuario_tecnico,email_usuario_tecnico,usuario_que_presta_soporte,observaciones	FROM prestamo_soportes where f_recibido='0000-00-00 00:00:00'");
 
 			return $obj_cliente->fetchAll(); // retorna todos los prestamos
 		}
@@ -132,6 +132,7 @@ class Cliente
 			$row=mysql_fetch_array($result);
 			$this->id=$row['id'];
 			$this->activo_equipo=$row['activo_equipo'];
+			$this->tipo_equipo=$row['tipo_equipo'];
 			$this->f_prestamo=$row['f_prestamo'];
 			$this->f_limite=$row['f_limite'];
 			$this->f_recibido=$row['f_recibido'];
@@ -156,6 +157,8 @@ class Cliente
 	 { return $this->id;}
 	function getActivo_equipo()
 	 { return $this->activo_equipo;}
+	function getTipo_equipo()
+	 { return $this->tipo_equipo;} 
 	function getF_prestamo()
 	 { return $this->f_prestamo;}
 	function getF_limite()
@@ -192,6 +195,8 @@ class Cliente
 	// metodos que setean los valores
 	function setActivo_equipo($val)
 	 { $this->activo_equipo=$val;}
+	function setTipo_equipo($val)
+	 { $this->tipo_equipo=$val;} 
 	function setF_prestamo($val)
 	 {  $this->f_prestamo=$val;}
 	function setF_limite($val)

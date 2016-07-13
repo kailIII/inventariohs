@@ -3,6 +3,7 @@
     <thead>
         <tr>
             <th>Activo Equipo</th>
+            <th>Tipo de Equipo</th>
             <th>Fecha Prestamo</th>
             <th>Fecha Limite</th>
             <th>Dias Prestado</th>
@@ -23,6 +24,7 @@
         <?php foreach ($view->clientes as $cliente):  // uso la otra sintaxis de php para templates ?>
             <tr>
                 <td><?php echo $cliente['activo_equipo'];?></td>
+                <td><?php echo $cliente['tipo_equipo'];?></td>
                 <td><?php echo $cliente['f_prestamo'];?></td>
                 <td><?php echo $cliente['f_limite'];?></td>
                 <?php
