@@ -12,7 +12,7 @@
             <th>Bloque</th>
             <th>Piso</th>
             <th>Cubiculo</th>
-            <th>Ext</th>
+            <!-- <th>Ext</th> -->
             <th>Ot Aranda</th>
             <th>Tecnico Responsable</th>
             <th>Editar</th>
@@ -39,7 +39,7 @@
                 <td><?php echo $cliente['bloque'];?></td>
                 <td><?php echo $cliente['piso'];?></td>
                 <td><?php echo $cliente['cubiculo'];?></td>
-                <td><?php echo $cliente['ext_tel'];?></td>
+                <!-- <td><?php echo $cliente['ext_tel'];?></td> -->
                 <td><?php echo $cliente['ot_sigma'];?></td>
                 <td><?php echo $cliente['usuario_tecnico'];?></td>
                 <td><a class="edit button" href="javascript:void(0);" data-id="<?php echo $cliente['id'];?>">Editar</a></td>
