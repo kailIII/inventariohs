@@ -1,6 +1,6 @@
 <?php
 include_once("config.php");
-include_once("sesion.php");
+//include_once("sesion.php");
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -59,32 +59,14 @@ include_once("sesion.php");
                     </div>                  
 
                     <div class="columns large-3">
-                      <h4>Equipos de Soporte</h4>
-                      <h4>Ingresar / Modificar</h4>
-                      <li><a href="soporte-form_ingresar_activo_soporte_a_bodega.php" class="button">Ingresar Nuevo Equipo de Soporte a Bodega</a></li>
-                      <h4>Prestamo Soportes</h4>
-                      <li><a href="soporte-form_ingresar_prestamo_equipo_soporte.php" class="button">Prestar Equipo de Soporte por Nro de Activo </a></li>
-                      <li><a href="soporte-form_consultar_equipos_soporte_en_prestamo.php" class="button">Consultar y recibir Equipos Prestados</a></li>
-                    </div>  
-                    
-                    <div class="columns large-3">
-                      <h4>Equipos Alquilado</h4>
-                      <h4>Ingresar / Modificar</h4>
-                      <li><a href="alquilado-form_ingresar_activo_alquilado_a_bodega.php" class="button">Ingresar Nuevo Equipo Alquilado a Bodega</a></li>
-                      <h4>Prestamo Alquilados</h4>
-                      <li><a href="alquilado-form_ingresar_prestamo_equipo_alquilado.php" class="button">Prestar Equipo de Alquilado por Nro de Activo </a></li>
-                      <li><a href="soporte-form_consultar_equipos_soporte_en_prestamo.php" class="button">Consultar y recibir Equipos Alquilados</a></li>
-                    </div>  
-
-                    <div class="columns large-3">
                       <h4>Maestro de Soporte</h4>
                       <h4>Ingresar / Modificar</h4>
-                      <li><a href="soporte-form_ingresar_activo_soporte_a_bodega.php" class="button">Ingresar Nuevo Switch de Soporte a Bodega</a></li>
-                      <h4>Prestamo Sw y Hub</h4>
-                      <li><a href="soporte-form_ingresar_prestamo_soporte_switch.php" class="button">Prestar Switch por Nro de Activo </a></li>
-                      <li><a href="soporte-form_consultar_equipos_soporte_en_prestamo.php" class="button">Consultar y recibir Switches Prestados</a></li>
+                      <li><a href="soporte-form_ingresar_activo_soporte_a_bodega.php" class="button">Ingresar Nuevo Soporte a Bodega</a></li>
+                      <h4>----- Prestamos -----</h4>
+                      <li><a href="soporte-form_ingresar_prestamo_soporte.php" class="button">Prestar Soporte por Nro de Activo </a></li>
+                      <li><a href="soporte-form_ingresar_prestamo_soporte_switch.php" class="button">Prestar Switch de soporte por Nro de Activo </a></li>
+                      <li><a href="soporte-form_consultar_equipos_soporte_en_prestamo.php" class="button">Consultar y recibir Equipos Prestados</a></li>
                     </div>  
-                                      
                   </ul>
                 </div>
             </form>

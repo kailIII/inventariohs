@@ -1,6 +1,6 @@
 ﻿<?php
 include_once("config.php");
-//include_once("sesion.php");
+include_once("sesion.php");
 // formulario Layout 
 /*if(isset($_SESSION['usuario'])){
 echo "Has iniciado Sesion: ".$_SESSION['usuario'];
@@ -11,7 +11,7 @@ echo $_SESSION['usuario'];
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html class="no-js" lang="en">
+<html>
 <head>
     <script type="text/javascript" src="resources/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="js/soporte-functions.js"></script>
@@ -21,8 +21,6 @@ echo $_SESSION['usuario'];
     <title>Prestamo de Soportes</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="resources/style.css" />
-    <script src="js/vendor/modernizr.js"></script>
-    <script src="js/funciones.js"></script>
 </head>
 <body>
   <div class="row">
@@ -71,8 +69,5 @@ echo $_SESSION['usuario'];
           </div>
         </div>
     </form>
-      <script src="js/vendor/jquery.js"></script>
-      <script src="js/foundation.min.js"></script>
-      <script src="js/funciones.js"></script>
 </body>
 </html>

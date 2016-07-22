@@ -8,7 +8,7 @@ include_once("sesion.php");
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prestamos de Equipos de Soporte</title>
+  <title>Soporte - Ingresar / Modificar</title>
   <Link rel ="shortcut icon" href="uninorte.ico" type="image/x-icon"/>
   <link rel="stylesheet" href="css/foundation.css" />
   <script src="js/vendor/modernizr.js"></script>
@@ -57,24 +57,24 @@ include_once("sesion.php");
         <input type="button" name="consultar_soporte" id="consultar_soporte" value="Consultar" class="button">
       </div>
 
-      <div class="columns large-5">
-        <label for="tipo_equipo">Tipo. Cpu / Monitor / Impresora / Mac / Switch / Telefono</label>
+      <div class="columns large-4">
+        <label for="tipo_equipo">Tipo. Pc / Monitor / Impresora / Mac / Telefono</label>
         <input type="text" name="tipo_equipo" id="tipo_equipo" style="text-transform: uppercase;" value="" placeholder="Obligatorio tipo de equipo">
       </div>
 
-      <div class="columns large-3">
+      <div class="columns large-4">
         <label for="marca_equipo">Marca del equipo.</label>
         <input type="text" name="marca_equipo" id="marca_equipo" style="text-transform: uppercase;" value="" placeholder="Obligatorio marca del equipo">
       </div>
     </div>
 
     <div class="row">
-      <div class="columns large-3">
+      <div class="columns large-2">
         <label for="modelo_equipo">Modelo del equipo.</label>
         <input type="text" name="modelo_equipo" id="modelo_equipo" style="text-transform: uppercase;" value="" placeholder="Obligatorio modelo del equipo">
       </div>
 
-      <div class="columns large-3">
+      <div class="columns large-2">
         <label for="serial_equipo">Serial del equipo.</label>
         <input type="text" name="serial_equipo" id="serial_equipo" style="text-transform: uppercase;" value="" placeholder="Obligatorio serial del equipo">
       </div>
@@ -82,6 +82,11 @@ include_once("sesion.php");
       <div class="columns large-3">
         <label for="f_compra">Fecha de Compra.</label>
         <input type="date" name="f_compra" id="f_compra" value="">
+      </div>
+
+      <div class="columns large-2">
+        <label for="estado_equipo">Estado del equipo </label>
+        <input type="text" name="estado_equipo" id="estado_equipo" style="text-transform: uppercase;" DISABLED value="SOPORTE" placeholder="Obligatorio estado del equipo">
       </div>
 
       <div class="columns large-3">
@@ -93,16 +98,10 @@ include_once("sesion.php");
 
     <!-- ******************************************** INFORMACION DE RED DEL EQUIPO *********************************************************** 68-5b-35-97-ad-fd -->
     <div class="row">
-      <h4> Información de red del equipo  / Estado del Equipo</h4>
-      
+      <h4> Información de red del equipo.  Mac  </h4>
       <div class="columns large-3">
         <label for="dir_mac">Dirección Mac del pc</label>
         <input type="text" name="dir_mac" id="dir_mac" style="text-transform: uppercase;" value="AA-AA-AA-AA-AA-AA" placeholder="Opcional Mac">
-      </div>
-
-      <div class="columns large-2">
-        <label for="estado_equipo">Estado del equipo </label>
-        <input type="text" name="estado_equipo" id="estado_equipo" style="text-transform: uppercase;" DISABLED value="SOPORTE" placeholder="Obligatorio estado del equipo">
       </div>
     </div>
     <!-- ******************************************** INFORMACION DE RED DEL EQUIPO ****************************** -->
@@ -162,17 +161,47 @@ include_once("sesion.php");
       <div class="row">
         <div class="columns large-4">
           <label for="usuario">Usuario</label>
-          <input type="text" name="usuario" id="usuario" style="text-transform: uppercase;" DISABLED value="<?php echo $_SESSION['nombre'] ?>" placeholder="Obligatorio usuario del equipo">
+          <input type="text" name="usuario" id="usuario" style="text-transform: uppercase;" value="" placeholder="Obligatorio usuario del equipo">
         </div>
+
+         <div class="columns large-1">
+          <label for="seleccionar_correo2">Email</label>
+          <select name="seleccionar_correo2" id="seleccionar_correo2">
+                <option selected="selected">----- Seleccionar E-mail ------</option>
+                <?php
+                  include_once("config.php");
+                  $conexion = mysql_connect($server,$username,$password);
+                  mysql_set_charset('utf8',$conexion);
+                  mysql_select_db($database);
+                   //$sw_id     = $_POST['sw_id'];
+                   // $dir_ip_sw = $_POST['dir_ip_sw'];
+                  //  $unidad    = $_POST['unidad'];
+                  $query = "SELECT id_correo, nombres, area, cargo, ext, correo FROM correo ORDER BY nombres ";
+
+                  $resultado = mysql_query($query,$conexion);
+                  $numero_de_filas = mysql_num_rows($resultado);
+                  while($registro=mysql_fetch_array($resultado))
+                  {
+                    $id_correo          = $registro['id_correo'];
+                    $nombres            = $registro['nombres'];
+                    $cargo              = $registro['cargo'];
+                    $ext                = $registro['ext'];
+                    $correo             = $registro['correo'];
+
+                    echo '<option value="'.$id_correo.'">'.$nombres.''." - ".''.$cargo.''." - ".''.$ext.''." ".''." - correo: ".''.$correo.'</option>';
+                  }
+              ?>
+            </select> <br/><br/>
+      </div>
 
         <div class="columns large-4">
           <label for="email_usuario">Email Usuario</label>
-          <input type="text" name="email_usuario" id="email_usuario" DISABLED value="<?php echo $_SESSION['correo'] ?>" placeholder="Obligatorio email usuario del equipo">
+          <input type="text" name="email_usuario" id="email_usuario" value="" placeholder="Obligatorio email usuario del equipo">
         </div>
 
         <div class="columns large-2">
           <label for="ext_tel">Extension telefónica </label>
-          <input type="text" name="ext_tel" id="ext_tel" style="text-transform: uppercase;"  DISABLED value="<?php echo $_SESSION['ext_tel'] ?>" placeholder="Obligatorio ext telefonica">
+          <input type="text" name="ext_tel" id="ext_tel" style="text-transform: uppercase;" value="" placeholder="Obligatorio ext telefonica">
         </div>
 
         <div class="columns large-12">

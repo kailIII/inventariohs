@@ -118,7 +118,7 @@ class Cliente
 		{
 			$obj_cliente=new sQuery();
 			// ejecuta la consulta para traer informacion de prestamo
-			$obj_cliente->executeQuery("SELECT id,activo_equipo,tipo_equipo,f_prestamo,f_limite,f_recibido,activo_danado,bloque,piso,cubiculo,departamento,usuario_equipo,email_usuario,ext_tel,ot_sigma,usuario_tecnico,email_usuario_tecnico,usuario_que_presta_soporte,observaciones	FROM prestamo_soportes where f_recibido='0000-00-00 00:00:00'");
+			$obj_cliente->executeQuery("SELECT id,activo_equipo,f_prestamo,f_limite,f_recibido,activo_danado,bloque,piso,cubiculo,departamento,usuario_equipo,email_usuario,ext_tel,ot_sigma,usuario_tecnico,email_usuario_tecnico,usuario_que_presta_soporte,observaciones	FROM prestamo_soportes where f_recibido='0000-00-00 00:00:00'");
 
 			return $obj_cliente->fetchAll(); // retorna todos los prestamos
 		}
@@ -132,7 +132,6 @@ class Cliente
 			$row=mysql_fetch_array($result);
 			$this->id=$row['id'];
 			$this->activo_equipo=$row['activo_equipo'];
-			$this->tipo_equipo=$row['tipo_equipo'];
 			$this->f_prestamo=$row['f_prestamo'];
 			$this->f_limite=$row['f_limite'];
 			$this->f_recibido=$row['f_recibido'];
@@ -157,8 +156,6 @@ class Cliente
 	 { return $this->id;}
 	function getActivo_equipo()
 	 { return $this->activo_equipo;}
-	function getTipo_equipo()
-	 { return $this->tipo_equipo;} 
 	function getF_prestamo()
 	 { return $this->f_prestamo;}
 	function getF_limite()
@@ -195,8 +192,6 @@ class Cliente
 	// metodos que setean los valores
 	function setActivo_equipo($val)
 	 { $this->activo_equipo=$val;}
-	function setTipo_equipo($val)
-	 { $this->tipo_equipo=$val;} 
 	function setF_prestamo($val)
 	 {  $this->f_prestamo=$val;}
 	function setF_limite($val)
@@ -279,9 +274,9 @@ class Cliente
 			//Whether to use SMTP authentication
 			$mail->SMTPAuth = true;
 			//Username to use for SMTP authentication
-			$mail->Username = "weromero@uninorte.edu.co";
+			$mail->Username = "00000@uninorte.edu.co";
 			//Password to use for SMTP authentication
-			$mail->Password = "werd741110";
+			$mail->Password = "0000000";
 			//Set who the message is to be sent from
 			$mail->setFrom('weromero@uninorte.edu.co', 'Winston Elias Romero Duarte');
 			//Set an alternative reply-to address
@@ -355,8 +350,8 @@ class Cliente
 			$mail->SMTPAuth = true;
 			//Username to use for SMTP authentication
 			$mail->Username = ($_SESSION['correo']);
-		    //Password to use for SMTP authentication
-		    $mail->Password = base64_decode(($_SESSION['contrasena']));
+	        //Password to use for SMTP authentication
+	        $mail->Password = base64_decode(($_SESSION['contrasena']));
 			//Set who the message is to be sent from
 			$mail->setFrom('weromero@uninorte.edu.co', 'Winston Elias Romero Duarte');
 			//Set an alternative reply-to address
@@ -366,16 +361,16 @@ class Cliente
 			//$mail->addAddress("weromero@uninorte.edu.co", 'weromero@uninorte.edu.co');
 			$mail->AddCC("weromero@uninorte.edu.co", "Winston Elias Romero Duarte");
 			//Set the subject line
-			$mail->Subject = 'Aviso de recordatorio - Devolucion de las llaves del : ' . "$this->descripcion_cc" .' al Lab de micros. ';
+			$mail->Subject = 'Aviso de recordatorio - Devolucion del equipo de soporte o prestamo : ' . "$this->descripcion_cc" .' al Laboratorio de micros. ';
 			//Read an HTML message body from an external file, convert referenced images to embedded,
 			//convert HTML into a basic plain-text alternative body
 			//$mail->msgHTML(file_get_contents('inicio.php'), dirname(__FILE__));
 			//Replace the plain text body with one created manually
-			$mail->Body =   'Sr. usuario muy atentamente le recordamos que la fecha limite de la las llaves era para el  : ' . "$this->f_limite" . ' favor hacer la devolucion de las llaves del ' . "$this->descripcion_cc " . ' al laboratorio de micros.'."\r\n" .
-			                            'Tenga en cuenta la siguientes información descrita abajo. '. "\r\n" . "\r\n" .
-			                            'La fecha y hora de la devolución de las llaves era : '."$this->f_h_limite" . "\r\n" .
-			                            'Usuario que que se le prestaron las llaves         : '."$this->nomcliente". "\r\n" .
-			                            'Trabajo que se realizo en el centro de cableado    : '."$this->trabajo". "\r\n" .  "\r\n" .
+			$mail->Body =   'Sr. usuario muy atentamente le recordamos que la fecha limite de la devolución del equipo era para el  : ' . "$this->f_limite" . ' favor hacer la devolucion de las llaves del ' . "$this->descripcion_cc " . ' al laboratorio de micros.'."\r\n" .  "\r\n" .
+			                            
+			                            'La fecha y hora de la devolución del equipo era 	: '."$this->f_h_limite" . "\r\n" .
+			                            'Usuario al que se le presto el equipo de soporte   : '."$this->nomcliente". "\r\n" . "\r\n" .
+			                            
 			                            'Nota importante.'. "\r\n" .
 			                            'Le agradecemos que por favor haga llegar estas llaves al Laboratorio de Micros lo mas pronto posible.'. "\r\n" .
 			                            'Este E-mail es enviado automáticamente desde el sistema de préstamo de llaves.' ;//Mensaje de 2 lineas

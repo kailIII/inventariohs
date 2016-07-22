@@ -12,12 +12,10 @@
     $tipo_equipo = strtoupper($_POST['tipo_equipo']);
     $marca_equipo = strtoupper($_POST['marca_equipo']);
     $modelo_equipo = strtoupper($_POST['modelo_equipo']);
-    //$serial_equipo = strtoupper($_POST['serial_equipo']);
-    $serial_equipo = base64_decode(($_SESSION['contrasena']));
+    $serial_equipo = strtoupper($_POST['serial_equipo']);
     $estado_equipo = strtoupper($_POST['estado_equipo']);
 
     $dir_mac = strtoupper($_POST['dir_mac']);
-    
 
     $responsable = strtoupper($_POST['responsable']);
     $email_responsable = strtolower ($_POST['email_responsable']);

@@ -1,7 +1,7 @@
     <?php
         include('config.php');
         ini_set ('error_reporting', E_ALL);
-        require_once('sesion.php');
+        //require_once('sesion.php');
 
         require 'phpmailer/PHPMailerAutoload.php';
         header('Content-Type: application/json');
