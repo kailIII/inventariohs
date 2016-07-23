@@ -274,33 +274,33 @@ class Cliente
 			//Whether to use SMTP authentication
 			$mail->SMTPAuth = true;
 			//Username to use for SMTP authentication
-			$mail->Username = "00000@uninorte.edu.co";
-			//Password to use for SMTP authentication
-			$mail->Password = "0000000";
+			$mail->Username = ($_SESSION['correo']);
+	        //Password to use for SMTP authentication
+	        $mail->Password = base64_decode(($_SESSION['contrasena']));
 			//Set who the message is to be sent from
 			$mail->setFrom('weromero@uninorte.edu.co', 'Winston Elias Romero Duarte');
 			//Set an alternative reply-to address
 			$mail->addReplyTo('weromero@uninorte.edu.co', 'Winston Elias Romero Duarte');
 			//Set who the message is to be sent to
-			//$mail->addAddress("$this->email_usuario", "$this->usuario_equipo");
+			$mail->addAddress("$this->email_usuario", "$this->usuario_equipo");
 			$mail->addAddress($_SESSION['correo'], $_SESSION['nombre']);
 			$mail->AddCC("$this->email_usuario_tecnico", "$this->usuario_tecnico");
-			//$mail->AddCC("coordinadorequipoinformatico@uninorte.edu.co", 'Alvaro Ivan Santiago Arellana');
+			$mail->AddCC("coordinadorequipoinformatico@uninorte.edu.co", 'Alvaro Ivan Santiago Arellana');
 			//Set the subject line
 			$mail->Subject = 'Devolución de equipo de soporte activo :' . "$this->activo_equipo" .' a bodega. ';
 			//Read an HTML message body from an external file, convert referenced images to embedded,
 			//convert HTML into a basic plain-text alternative body
 			//$mail->msgHTML(file_get_contents('inicio.php'), dirname(__FILE__));
 			//Replace the plain text body with one created manually
-			$mail->Body =   'El día : ' . "$this->f_recibido" . ' se realizo la devolución del activo Nro: ' . "$this->activo_equipo " . ' a bodega'."\r\n" .
-			                            'Tenga en cuenta la siguiente información descrita abajo. '. "\r\n" . "\r\n" .
+			$mail->Body =   'El día : ' . "$this->f_recibido" . ' se realizo la devolución del activo Nro: ' . "$this->activo_equipo " . ' '."\r\n" . "\r\n" .
+			                            
 			                            'La fecha de la devolución del equipo 				: '."$this->f_recibido" . "\r\n" .
 			                            'Usuario al que se le presto el equipo 				: '."$this->usuario_equipo". "\r\n" .
 			                            'Tecnico que devuelve el equipo a bodega 			: '."$this->usuario_tecnico". "\r\n" .
 			                            'Tecnico que ingresa el equipo a bodega 				: '."$this->usuario_que_presta_soporte". "\r\n" .  "\r\n" .
 			                            'Nota importante.'. "\r\n" .
-			                            'Con este E-mail queda nota de que el técnico entrego el equipo al Laboratorio de Micros.'. "\r\n" .
-			                            'Este E-mail es enviado automáticamente desde el sistema de Inventario de equipos del Laboratorio  de Micros.' ;//Mensaje de 2 lineas
+			                            'Con este E-mail queda nota de que el técnico entrego el equipo a su bodega correspondiente.'. "\r\n" .
+			                            'Este E-mail es enviado automáticamente desde el sistema de Inventario de equipos del Laboratorio de Micros.' ;//Mensaje de 2 lineas
 			//Attach an image file
 			//$mail->addAttachment('images/phpmailer_mini.png');
 			//send the message, check for errors
