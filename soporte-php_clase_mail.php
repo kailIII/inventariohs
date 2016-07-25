@@ -8,6 +8,7 @@ include_once("sesion.php");
 include('config.php');
 require 'phpmailer/PHPMailerAutoload.php';
 /*header('Content-Type: application/json');*/
+ $activo_equipo = strtoupper($_POST['activo_equipo']);
 
 // se declara una clase para hacer la conexion con la base de datos
 class Conexion
@@ -123,15 +124,16 @@ class Cliente
 			return $obj_cliente->fetchAll(); // retorna todos los prestamos
 		}
 
-	function Cliente($activo_equipo=0) // declara el constructor, si trae el numero de prestamo lo busca , si no, trae todos los prestamos
+	function Cliente($id=0) // declara el constructor, si trae el numero de prestamo lo busca , si no, trae todos los prestamos
 	{
-		if ($activo_equipo!=0)
+		if ($id!=0)
 		{
 			$obj_cliente=new sQuery();
-			$result=$obj_cliente->executeQuery("SELECT * FROM prestamo_soportes WHERE id ='$activo_equipo'"); // ejecuta la consulta para traer al prestamo
+			$result=$obj_cliente->executeQuery("SELECT * FROM prestamo_soportes WHERE id ='$id'"); // ejecuta la consulta para traer al prestamo
 			$row=mysql_fetch_array($result);
 			$this->id=$row['id'];
 			$this->activo_equipo=$row['activo_equipo'];
+			$this->tipo_equipo=$row['tipo_equipo'];
 			$this->f_prestamo=$row['f_prestamo'];
 			$this->f_limite=$row['f_limite'];
 			$this->f_recibido=$row['f_recibido'];
@@ -156,6 +158,8 @@ class Cliente
 	 { return $this->id;}
 	function getActivo_equipo()
 	 { return $this->activo_equipo;}
+	function getTipo_equipo()
+	 { return $this->tipo_equipo;}
 	function getF_prestamo()
 	 { return $this->f_prestamo;}
 	function getF_limite()
@@ -192,6 +196,8 @@ class Cliente
 	// metodos que setean los valores
 	function setActivo_equipo($val)
 	 { $this->activo_equipo=$val;}
+	function setTipo_equipo($val)
+	 { $this->tipo_equipo=$val;}
 	function setF_prestamo($val)
 	 {  $this->f_prestamo=$val;}
 	function setF_limite($val)
@@ -205,7 +211,7 @@ class Cliente
 	function setPiso($val)
 	 {  $this->piso=$val;}
 	function setCubiculo($val)
-	 {  $this->Cubiculo=$val;}
+	 {  $this->cubiculo=$val;}
 	function setDepartamento($val)
 	 {  $this->departamento=$val;}
 	function setUsuario_equipo($val)
@@ -236,6 +242,9 @@ class Cliente
 	function recordatoriosave()
     {
         if($this->id)
+        {$this->recordatorioPrestamo();}
+
+    	if($this->activo_equipo)
         {$this->recordatorioPrestamo();}
     }
 	private function updatePrestamo()	// actualiza el Prestamo cargado en los atributos
@@ -278,9 +287,9 @@ class Cliente
 	        //Password to use for SMTP authentication
 	        $mail->Password = base64_decode(($_SESSION['contrasena']));
 			//Set who the message is to be sent from
-			$mail->setFrom('weromero@uninorte.edu.co', 'Winston Elias Romero Duarte');
-			//Set an alternative reply-to address
-			$mail->addReplyTo('weromero@uninorte.edu.co', 'Winston Elias Romero Duarte');
+			$mail->setFrom($_SESSION['correo'], $_SESSION['nombre']);
+	        //Set an alternative reply-to address
+	        $mail->addReplyTo($_SESSION['correo'], $_SESSION['nombre']);
 			//Set who the message is to be sent to
 			$mail->addAddress("$this->email_usuario", "$this->usuario_equipo");
 			$mail->addAddress($_SESSION['correo'], $_SESSION['nombre']);
@@ -294,10 +303,10 @@ class Cliente
 			//Replace the plain text body with one created manually
 			$mail->Body =   'El día : ' . "$this->f_recibido" . ' se realizo la devolución del activo Nro: ' . "$this->activo_equipo " . ' '."\r\n" . "\r\n" .
 			                            
-			                            'La fecha de la devolución del equipo 				: '."$this->f_recibido" . "\r\n" .
-			                            'Usuario al que se le presto el equipo 				: '."$this->usuario_equipo". "\r\n" .
-			                            'Tecnico que devuelve el equipo a bodega 			: '."$this->usuario_tecnico". "\r\n" .
-			                            'Tecnico que ingresa el equipo a bodega 				: '."$this->usuario_que_presta_soporte". "\r\n" .  "\r\n" .
+			                            'La fecha de la devolución del equipo 		: '."$this->f_recibido" . "\r\n" .
+			                            'Usuario al que se le retira el equipo		: '."$this->usuario_equipo". "\r\n" .
+			                            'Tecnico que devuelve el equipo a bodega 	: '."$this->usuario_tecnico". "\r\n" .
+			                            'Tecnico que ingresa el equipo a bodega 		: '."$this->usuario_que_presta_soporte". "\r\n" .  "\r\n" .
 			                            'Nota importante.'. "\r\n" .
 			                            'Con este E-mail queda nota de que el técnico entrego el equipo a su bodega correspondiente.'. "\r\n" .
 			                            'Este E-mail es enviado automáticamente desde el sistema de Inventario de equipos del Laboratorio de Micros.' ;//Mensaje de 2 lineas
@@ -318,10 +327,10 @@ class Cliente
 	private function recordatorioPrestamo()	// envia recordatorio del Prestamo
 	{
 			$obj_cliente=new sQuery();
-			//$query="UPDATE prestamo_llaves SET f_h_recibido='$this->f_h_recibido', cliente='$this->nomcliente',correo='$this->correo' where id = $this->id";
-			/*$query="UPDATE prestamo_llaves SET descripcion_cc=$descripcion_cc where id = $this->id";*/
+			$query="SELECT * FROM prestamo_soportes WHERE id = $this->id";
 
-
+			 $activo_equipo = strtoupper($_POST['activo_equipo']);
+	
 			/**
 			 * This example shows making an SMTP connection with authentication.
 			 */
@@ -353,27 +362,30 @@ class Cliente
 	        //Password to use for SMTP authentication
 	        $mail->Password = base64_decode(($_SESSION['contrasena']));
 			//Set who the message is to be sent from
-			$mail->setFrom('weromero@uninorte.edu.co', 'Winston Elias Romero Duarte');
-			//Set an alternative reply-to address
-			$mail->addReplyTo('weromero@uninorte.edu.co', 'Winston Elias Romero Duarte');
+			$mail->setFrom($_SESSION['correo'], $_SESSION['nombre']);
+	        //Set an alternative reply-to address
+	        $mail->addReplyTo($_SESSION['correo'], $_SESSION['nombre']);
 			//Set who the message is to be sent to
-			$mail->addAddress("$this->correo", "$this->nomcliente");
+			$mail->addAddress("$this->email_usuario", "$this->usuario_equipo");
 			//$mail->addAddress("weromero@uninorte.edu.co", 'weromero@uninorte.edu.co');
-			$mail->AddCC("weromero@uninorte.edu.co", "Winston Elias Romero Duarte");
+			$mail->AddCC($_SESSION['correo'], $_SESSION['nombre']);
+			$mail->AddCC("coordinadorequipoinformatico@uninorte.edu.co", "Alvaro Ivan Santiago Arellana");
+			$mail->AddCC("egaliano@uninorte.edu.co", "Emma Beatriz Galiano Vargas");
 			//Set the subject line
-			$mail->Subject = 'Aviso de recordatorio - Devolucion del equipo de soporte o prestamo : ' . "$this->descripcion_cc" .' al Laboratorio de micros. ';
+			$mail->Subject = 'Aviso de recordatorio - Devolución del equipo de soporte o préstamo. Activo:'."$this->activo_equipo".' al Laboratorio de micros. ';
 			//Read an HTML message body from an external file, convert referenced images to embedded,
 			//convert HTML into a basic plain-text alternative body
 			//$mail->msgHTML(file_get_contents('inicio.php'), dirname(__FILE__));
 			//Replace the plain text body with one created manually
-			$mail->Body =   'Sr. usuario muy atentamente le recordamos que la fecha limite de la devolución del equipo era para el  : ' . "$this->f_limite" . ' favor hacer la devolucion de las llaves del ' . "$this->descripcion_cc " . ' al laboratorio de micros.'."\r\n" .  "\r\n" .
+			$mail->Body =   'Sr. usuario muy atentamente le recordamos que la fecha limite de la devolución del equipo es el  : ' . "$this->f_limite" . '. Por favor confirmar si ya realizó la solicitud del nuevo equipo con la DTIC (Dirección de Tecnología Informática.)'."\r\n" .  "\r\n" .
 			                            
-			                            'La fecha y hora de la devolución del equipo era 	: '."$this->f_h_limite" . "\r\n" .
-			                            'Usuario al que se le presto el equipo de soporte   : '."$this->nomcliente". "\r\n" . "\r\n" .
-			                            
+			                            'Activo del equipo dañado					:'."$this->activo_danado" . "\r\n" .
+			                            'Tipo de equipo 								:'."$this->tipo_equipo" . "\r\n" .
+			                            'La fecha en la que se realizo el prestamo 		:'."$this->f_prestamo" . "\r\n" .
+			                            'La fecha limite para la devolución del equipo es 	:'."$this->f_limite" . "\r\n" .
+			                            'Usuario al que se le presto el equipo de soporte 	:'."$this->usuario_equipo". "\r\n" . "\r\n" .
 			                            'Nota importante.'. "\r\n" .
-			                            'Le agradecemos que por favor haga llegar estas llaves al Laboratorio de Micros lo mas pronto posible.'. "\r\n" .
-			                            'Este E-mail es enviado automáticamente desde el sistema de préstamo de llaves.' ;//Mensaje de 2 lineas
+			                            'Este E-mail es enviado automáticamente desde el sistema de préstamo de equipos de soporte.' ;//Mensaje de 2 lineas
 			//Attach an image file
 			//$mail->addAttachment('images/phpmailer_mini.png');
 			//send the message, check for errors
@@ -390,7 +402,7 @@ class Cliente
 	private function insertPrestamo()	// inserta el prestamo cargado en los atributos
 	{
 			$obj_cliente=new sQuery();
-			$query="INSERT INTO prestamo_soportes(activo_equipo,f_prestamo,f_limite,f_recibido,ext_tel)VALUES('$this->activo_equipo', '$this->f_prestamo','$this->f_limite','$this->f_recibido','$this->cliente','$this->empresa','$this->correo','$this->ex_tel','$this->trabajo')";
+			$query="INSERT INTO prestamo_soportes(activo_equipo,f_prestamo,f_limite,f_recibido,ext_tel)VALUES('$this->activo_equipo', '$this->f_prestamo','$this->f_limite','$this->f_recibido','$this->ex_tel')";
 
 			$obj_cliente->executeQuery($query); // ejecuta la consulta para traer al prestamo
 			return $obj_cliente->getAffect(); // retorna todos los registros afectados

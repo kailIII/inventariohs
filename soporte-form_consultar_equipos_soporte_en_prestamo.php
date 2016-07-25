@@ -64,16 +64,11 @@ switch ($action)
         $id            =intval($_POST['id']);
         $activo_equipo =$_POST['activo_equipo'];
         $f_recibido    =$_POST['f_recibido'];
-     //   $nomcliente    =$_POST['cliente'];
-       // $correo        =$_POST['correo'];
-
-
+        $f_recibido    =$_POST['f_limite'];
+     
         $cliente=new Cliente($id);
         $cliente->setActivo_equipo($activo_equipo);
-        //$cliente->setDescripcion($descripcion_cc);
         $cliente->setF_recibido($f_recibido);
-       // $cliente->setCliente($nomcliente);
-       // $cliente->setCorreo($correo);
         $cliente->recordatoriosave();
 
         $view->label='Recordatorio de Prestamo';
