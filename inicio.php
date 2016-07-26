@@ -128,7 +128,7 @@ include_once("sesion.php");
                       <li class="has-dropdown"><a href="#">Switches de Soporte</a> <!-- Menu lado derecho -->
                         <ul class="dropdown">
                           <li><a href="soporte-form_ingresar_activo_soporte_a_bodega.php" >Ingresar Nuevo Switch de Soporte a Bodega</a></li>
-                          <li><a href="soporte-form_ingresar_prestamo_soporte_switch.php" >Prestar Switch por Nro de Activo</a></li>
+                          <li><a href="contingencia-form_ingresar_prestamo_switch_contingencia.php" >Prestar Switch por Nro de Activo</a></li>
                           <li><a href="soporte-form_consultar_equipos_soporte_en_prestamo.php" >Consultar y recibir Switches Prestados</a></li>
                         </ul>
                       </li>

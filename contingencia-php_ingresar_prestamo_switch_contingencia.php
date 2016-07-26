@@ -34,8 +34,8 @@
         $usuario_que_presta_soporte = strtoupper($_POST['usuario_que_presta_soporte']);
         $observaciones              = strtoupper($_POST['observaciones']);
 
-        $query = "INSERT INTO prestamo_soportes (activo_equipo, f_prestamo, f_limite, activo_danado, bloque, piso, cubiculo, departamento, usuario_equipo, email_usuario, ext_tel, ot_sigma, usuario_tecnico, email_usuario_tecnico, usuario_que_presta_soporte, observaciones)
-        VALUES ('$activo_equipo', '$f_prestamo', '$f_limite', '$activo_danado', '$bloque', '$piso', '$cubiculo', '$departamento', '$usuario_equipo', '$email_usuario', '$ext_tel', '$ot_sigma', '$usuario_tecnico', '$email_usuario_tecnico', '$usuario_que_presta_soporte','$observaciones') ";
+        $query = "INSERT INTO prestamo_soportes (activo_equipo, tipo_equipo, f_prestamo, f_limite, activo_danado, bloque, piso, cubiculo, departamento, usuario_equipo, email_usuario, ext_tel, ot_sigma, usuario_tecnico, email_usuario_tecnico, usuario_que_presta_soporte, observaciones)
+        VALUES ('$activo_equipo', '$tipo_equipo', '$f_prestamo', '$f_limite', '$activo_danado', '$bloque', '$piso', '$cubiculo', '$departamento', '$usuario_equipo', '$email_usuario', '$ext_tel', '$ot_sigma', '$usuario_tecnico', '$email_usuario_tecnico', '$usuario_que_presta_soporte','$observaciones') ";
         $resultado = mysql_query($query,$conexion);
 
         $query = "UPDATE hardware SET estado_equipo='EN PRESTAMO' WHERE activo_equipo='$activo_equipo'";
