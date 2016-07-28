@@ -1,6 +1,6 @@
 <?php
 include_once("config.php");
-include_once("sesion.php");
+//include_once("sesion.php");
 ?>
 
 <!doctype html>

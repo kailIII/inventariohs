@@ -1,6 +1,6 @@
 <?php
 include_once("config.php");
-include_once("sesion.php");
+//include_once("sesion.php");
 ?>
 
 <!doctype html>
@@ -30,7 +30,7 @@ include_once("sesion.php");
     <ul class="title-area">
       <li class="name">
         <!-- Titulo del Menu -->
-        <h1><a href="#">Inventario de Equipos de Soporte</a></h1>
+        <h1><a href="#">Inventario de Equipos alquilados</a></h1>
       </li>
         <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
     </ul>
@@ -39,14 +39,13 @@ include_once("sesion.php");
       <!-- Right Nav Section  menu lado derecho-->
       <ul class="right">
         <li><a href="inicio.php">Inicio</a></li>
-        <li><a href="soporte-form_inicio_soporte.php">Modulo Soporte</a></li>
       </ul>
     </section>
   </nav>
 
   <form name="form_activo" id="form_activo" method="post" action="">
     <div class="row">
-      <h4>Informacion del equipo de soporte</h4>
+      <h4>Información del equipo alquilado</h4>
       <div class="columns large-2">
         <label for="activo_equipo">Activo CPU</label>
         <input type="text" name="activo_equipo" id="activo_equipo" onkeypress="return letrasynumeros_sin_espacio(event)" style="text-transform: uppercase;" required = "[0-9]" autofocus=true value="" placeholder="Obligatorio activo equipo">

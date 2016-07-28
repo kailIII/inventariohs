@@ -1,6 +1,6 @@
 <?php
     include('config.php');
-    require_once('sesion.php');
+    //require_once('sesion.php');
     require 'phpmailer/PHPMailerAutoload.php';
     header('Content-Type: application/json');
 

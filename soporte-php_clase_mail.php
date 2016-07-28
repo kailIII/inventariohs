@@ -252,7 +252,7 @@ class Cliente
 			$obj_cliente=new sQuery();
 			$query="UPDATE prestamo_soportes SET f_recibido='$this->f_recibido', usuario_equipo='$this->usuario_equipo', email_usuario='$this->email_usuario' where id = $this->id";
 
-			$query2="UPDATE hardware SET estado_equipo='SOPORTE' WHERE activo_equipo = $this->activo_equipo";
+			$query2="UPDATE hardware SET estado_equipo='SOPORTE' WHERE activo_equipo = '$this->activo_equipo'";
 
 			/*$query="UPDATE prestamo_llaves SET descripcion_cc=$descripcion_cc where id = $this->id";*/
 
@@ -318,6 +318,7 @@ class Cliente
 			} else {
 			    echo "Message sent!";
 			}
+			$query2="UPDATE hardware SET estado_equipo='SOPORTE' WHERE activo_equipo = '$this->activo_equipo'";
 			$obj_cliente->executeQuery($query); // ejecuta la consulta para traer al prestamo
 			$obj_cliente->executeQuery($query2);
 

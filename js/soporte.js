@@ -584,7 +584,7 @@ $('#soporte_ingresar_prestamo_equipo_soporte').click(
 
 
     if($('#ext_tel').val()==""){
-      alert("Introduce el email del usuario al que se le realiza el prestamo del equipo.");
+      alert("Introduce la extension telefonica deñ usuario que realiza el prestamo del equipo.");
       return false;
     }
     else{
