@@ -32,8 +32,8 @@
 			<div id="message"></div>
 
             <div id="toolbar">
-              <input type="text" id="filter" name="filter" placeholder="Filter :type any text here"  />
-              <a id="showaddformbutton" class="button green"><i class="fa fa-plus"></i> Add new row</a>
+              <input type="text" id="filter" name="filter" placeholder="Filtro : Digite punto de red a consultar"  />
+              <a id="showaddformbutton" class="button green"><i class="fa fa-plus"></i> Ingresar Punto de red</a>
             </div>
 			<!-- Grid contents -->
 			<div id="tablecontent"></div>
@@ -71,8 +71,6 @@
                 $("#addbutton").click(function() {
                   datagrid.addRow();
                 });
-
-        
 			}; 
 		</script>
 
@@ -92,8 +90,8 @@
             </div>
 
             <div class="row tright">
-              <a id="addbutton" class="button green" ><i class="fa fa-save"></i> Apply</a>
-              <a id="cancelbutton" class="button delete">Cancel</a>
+              <a id="addbutton" class="button green" ><i class="fa fa-save"></i> Ingresar</a>
+              <a id="cancelbutton" class="button delete">Cancelar</a>
             </div>
         </div>
         
