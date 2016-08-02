@@ -8,11 +8,12 @@ include_once("sesion.php");
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Inicio</title>
-      <LINK REL="SHORTCUT ICON" HREF="uninorte.ico" />
+      <LINK rel="SHORTCUT ICON" href="images/icons/uninorte.ico" />
       <link rel="stylesheet" href="css/foundation.css" />
       <!-- <Link href="css/estilo_maestro.css" type="text/css" rel="stylesheet">  -->
       <script src="js/vendor/modernizr.js"></script>
- </head>
+  </head>
+
   <body>
   		<div class="row">
         <div class="columns large-10">
