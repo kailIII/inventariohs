@@ -62,11 +62,11 @@ include_once("sesion.php");
                     
                       <li class="has-dropdown"><a href="#">Puntos de red</a> <!-- Menu lado derecho -->
                         <ul class="dropdown">
-                          <li><a href="red-form_ingresar_punto_de_red.php" >Ingresar Puntos de red</a></li>
-                          <li><a href="red-form_ingresar_punto_de_red_por_lotes.php" >Consultar / Modificar</a></li>
+                          <li><a href="red-form_ingresar_punto_de_red.php" >Consulta  / Modificar Punto de red</a></li>
+                          <li><a href="red-form_ingresar_punto_de_red_por_lotes.php" >Ingresar puntos de red por lotes </a></li>
+                          <li><a href="red-form_modificar_punto_de_red_por_lotes_grilla.php" >Consultar / Modificar por lotes</a></li>
                         </ul>
                       </li>
-
 
                       <li class="has-dropdown"><a href="#">Switches</a> <!-- Menu lado derecho -->
                         <ul class="dropdown">

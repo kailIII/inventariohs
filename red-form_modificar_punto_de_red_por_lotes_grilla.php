@@ -16,7 +16,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>EditableGrid Demo - Database Link</title>
+		<title>Consulta y Modificación</title>
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 		<link rel="stylesheet" href="css/responsive.css" type="text/css" media="screen">
 
@@ -26,7 +26,7 @@
 	
 	<body>
 		<div id="wrap">
-		<h1>EditableGrid Demo - Database Link</h1> 
+		<h1>Consulta y Modificación de puntos de red por lotes</h1> 
 		
 			<!-- Feedback message zone -->
 			<div id="message"></div>
