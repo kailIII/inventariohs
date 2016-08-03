@@ -104,7 +104,7 @@ include_once("sesion.php");
           </div>
         </div>
 
-        <iframe width="600" height="400" scrolling="auto" src="<?php print ("https://guayacan.uninorte.edu.co/directorio_interno/"); ?>"></iframe>
+       <!--  <iframe width="600" height="400" scrolling="auto" src="<?php print ("https://guayacan.uninorte.edu.co/directorio_interno/"); ?>"></iframe> -->
       </form>
 
       <script src="js/vendor/jquery.js"></script>

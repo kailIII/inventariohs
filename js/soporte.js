@@ -1,3 +1,8 @@
+//$(document).ready(function(){
+  $("#capa_btn_ingresar_prestamo_soporte").css("display", "block");
+  //$("#capa_btn_ingresar").css("display", "block");
+
+
 $('#consultar_soporte').click(
   function ()
   {
@@ -614,6 +619,9 @@ $('#soporte_ingresar_prestamo_equipo_soporte').click(
       var serial_equipo = $('#serial_equipo').val();
       var observaciones = $('#observaciones').val();
       var usuario_que_presta_soporte = $('#usuario_que_presta_soporte').val();
+      $("#capa_btn_ingresar_prestamo_soporte").css("display", "none");
+      
+       
 
         $.ajax({
           url     :"soporte-php_ingresar_prestamo_equipo_soporte.php",
@@ -645,6 +653,8 @@ $('#soporte_ingresar_prestamo_equipo_soporte').click(
             if(data = 1){
               $('#res').html("---- Prestamo de equipo de soporte ingresado al sistema. ----");
               $('#res').css('color','yellow');
+            //$("#capa_btn_ingresar_prestamo_soporte").css("display", "none");
+              
             }
             else{
               $('#res').html("Ha ocurrido un error en el ingreso del prestamo del equipo de soporte.");
@@ -654,6 +664,7 @@ $('#soporte_ingresar_prestamo_equipo_soporte').click(
           error:function(){
             alert("---- Prestamo de equipo de soporte ingresado al sistema. ----")
             console.log('Something went wrong', status, 'Consola Soporte no encontrado.......' );
+            $("#capa_btn_ingresar_prestamo_soporte").css("display", "none");
           }
         });
   }

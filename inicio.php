@@ -47,6 +47,7 @@ include_once("sesion.php");
                       <li><a href="activo-form_exportar_reubicacion.php" >Exportar Reubicado</a></li>
                       <li><a href="activo-form_consultar_activo.php" >Consultar Activo</a></li>
                       <li><a href="activo-form_consultar_equipos_por_ubicacion.php" >Consultar por Ubicación</a></li>
+                      <li><a href="directorio-form-directorio_interno.php" >Directorio Interno Uninorte</a></li>
                     </ul>
                   </li>
 

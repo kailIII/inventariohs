@@ -49,6 +49,7 @@ include_once("sesion.php");
 
 
  <!-- ******************************************** INFORMACION DEL USUARIO QUE PRESTA LAS LLAVES ************************************** -->
+   <form name="form_soporte" id="form_soporte" method="post" action="">
           <div class="row">
             <h4> Información del Equipo a prestar (Pc - Monitor - Impresora - Scanner)</h4>
             <select name="seleccionar_equipo_soporte" id="seleccionar_equipo_soporte">
@@ -224,7 +225,7 @@ include_once("sesion.php");
 <!-- ******************************************** FIN DE INFORMACION DE FECHA DE ENTREGA DEL EQUIPO  ****************************** -->
 <!-- ********************************************************** BOTONES ************************************************************* -->
         <div class="row">
-          <div class="columns large-2">
+          <div id="capa_btn_ingresar_prestamo_soporte" class="columns large-2">
             <label for="soporte_ingresar_prestamo_soporte">&nbsp;</label>
             <input type="button" name="soporte_ingresar_prestamo_equipo_soporte" id="soporte_ingresar_prestamo_equipo_soporte" value="Ingresar Prestamo" class="button">
           </div>
