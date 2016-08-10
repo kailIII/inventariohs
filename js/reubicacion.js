@@ -538,7 +538,60 @@ $('#btnmodificar_reubicado_enviar_email').click(
     else{
       var dir_ip = $('#dir_ip').val();
     }
+    
+    if($('#punto_de_red').val()=="NO APLICA"){
+      alert("Punto de red no valido, Coloca NO TIENE.");
+      $("#capa_btn_guardar_enviar_email").css("display", "block");
+      return false;
+    }
+    else{
+      var punto_de_red = $('#punto_de_red').val();
+    }
 
+    if($('#punto_de_red').val()=="N/A"){
+      alert("Punto de red no valido, Coloca NO TIENE.");
+      $("#capa_btn_guardar_enviar_email").css("display", "block");
+      return false;
+    }
+    else{
+      var punto_de_red = $('#punto_de_red').val();
+    }
+
+    if($('#punto_de_red').val()=="N"){
+      alert("Punto de red no valido, Coloca NO TIENE.");
+      $("#capa_btn_guardar_enviar_email").css("display", "block");
+      return false;
+    }
+    else{
+      var punto_de_red = $('#punto_de_red').val();
+    }
+
+    if($('#punto_de_red').val()=="NA"){
+      alert("Punto de red no valido, Coloca NO TIENE.");
+      $("#capa_btn_guardar_enviar_email").css("display", "block");
+      return false;
+    }
+    else{
+      var punto_de_red = $('#punto_de_red').val();
+    }
+
+    if($('#punto_de_red').val()=="NO"){
+      alert("Punto de red no valido, Coloca NO TIENE.");
+      $("#capa_btn_guardar_enviar_email").css("display", "block");
+      return false;
+    }
+    else{
+      var punto_de_red = $('#punto_de_red').val();
+    }
+
+    if($('#punto_de_red').val()==""){
+      alert("Punto de red puede estar vacio, Coloca NO TIENE.");
+      $("#capa_btn_guardar_enviar_email").css("display", "block");
+      return false;
+    }
+    else{
+      var punto_de_red = $('#punto_de_red').val();
+    }
 
     $.ajax({
           url     :"reubicacion-php_modificar_reubicacion_enviar_email.php",
@@ -680,25 +733,25 @@ $('.consultar_reubicacion').focusout(
         });
   });
 
-
-$('.punto_de_red').focusout(
-  function(){
-     $.ajax({
-          url     :"red-php_consultar_punto_de_red_duplicado.php",
-          dataType:"json",
-          type    :'post',
-          data:{
-          punto_de_red: $('#punto_de_red').val(),
-          activo_equipo: $('#activo_equipo').val(),
-          },
-          success:function(data) {
-          alert('Punto de red repetido con el activo: '+ data['activo_equipo']+' Tipo de equipo:  '+ data['tipo_equipo'] +' Estado del equipo:  '+ data['estado_equipo'] );
-          $("#punto_de_red").focus();
-              $('#res').html("---- Punto de red duplicado. ----");
-              $('#res').css('color','yellow');
-          },
-  });
-});
+/*
+          $('.punto_de_red').focusout(
+            function(){
+               $.ajax({
+                    url     :"red-php_consultar_punto_de_red_duplicado.php",
+                    dataType:"json",
+                    type    :'post',
+                    data:{
+                    punto_de_red: $('#punto_de_red').val(),
+                    activo_equipo: $('#activo_equipo').val(),
+                    },
+                    success:function(data) {
+                    alert('Punto de red repetido con el activo: '+ data['activo_equipo']+' Tipo de equipo:  '+ data['tipo_equipo'] +' Estado del equipo:  '+ data['estado_equipo'] );
+                    $("#punto_de_red").focus();
+                        $('#res').html("---- Punto de red duplicado. ----");
+                        $('#res').css('color','yellow');
+                    },
+            });
+          });*/
 
   //PUNTOS DE RED
   function letrasynumeros(e){

@@ -434,6 +434,24 @@ $('#btnmodificar_compra_enviar_email').click(
           var punto_de_red = $('#punto_de_red').val();
         }
 
+        if($('#punto_de_red').val()=="NO"){
+          alert("Punto de red no valido, Coloca NO TIENE.");
+          $("#capa_btn_guardar_enviar_email").css("display", "block");
+          return false;
+        }
+        else{
+          var punto_de_red = $('#punto_de_red').val();
+        }
+
+        if($('#punto_de_red').val()=="NA"){
+          alert("Punto de red no valido, Coloca NO TIENE.");
+          $("#capa_btn_guardar_enviar_email").css("display", "block");
+          return false;
+        }
+        else{
+          var punto_de_red = $('#punto_de_red').val();
+        }
+
         if($('#ot_sigma').val()==""){
           alert("Introduce la Ot de Sigma");
           $("#capa_btn_guardar_enviar_email").css("display", "block");
@@ -579,6 +597,41 @@ $('.email_usuario').focusout(
         }
         //alert('El email introducido es correcto.');
   //  });
+});
+
+$('#punto_de_red').focusout(
+  function(){
+  $.ajax({
+          url     :"red-php_consultar_punto_de_red1.php",
+          dataType:"json",
+          type    :'post',
+          data:{
+          punto_de_red: $('#punto_de_red').val(),
+          },
+          success:function(data) {
+           if ( jQuery.isEmptyObject(data) == false ){
+              $('#res').html("Orden de compra modificada en el sistema.");
+              $('#res').css('color','yellow');
+            }
+            /*else{
+              alert("Punto de red NO existe en la base de datos, por favor verificar el punto der red.");
+              $("#punto_de_red").focus();
+              alert('punto de red NO encontrado' ); 
+              $('#res').html("Ha ocurrido un error.");
+              $('#res').css('color','red');
+            }*/
+          },
+          error:function() {
+            alert("Punto de red NO existe en la base de datos, por favor verificar el punto der red.");
+            $("#punto_de_red").focus();
+         //   console.log('Something went wrong', status, 'Consola - Punto de red no existe en la base de datos, por favor verificar el punto der red.' );
+          }
+
+
+
+
+
+  });
 });
 
   //PUNTOS DE RED
