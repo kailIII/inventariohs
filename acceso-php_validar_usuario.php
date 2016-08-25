@@ -57,7 +57,7 @@ if($row = mysql_fetch_array($result))
   ?>
    <script languaje="javascript">
     /* alert("Contraseña Incorrecta"); */
-    alert("Digita bien la HIJUEPUTA Contraseña.");
+    alert("Digita bien la Contraseña.");
     location.href = "index.php";
    </script>
   <?php         
@@ -69,7 +69,7 @@ else
 ?>
  <script languaje="javascript">
   /* alert("El nombre de usuario es incorrecto!"); */
-  alert("Digita bien el HIJUEPUTA usuario!");
+  alert("Digita bien el usuario!");
   location.href = "index.php";
  </script>
 <?php   
