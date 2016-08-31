@@ -104,7 +104,7 @@
     $mail->addAddress("trasladosybajas@uninorte.edu.co", "Traslados y Bajas Uninorte");
     $mail->AddCC("recepciondeactivos@uninorte.edu.co", "Recepcion de Activos");
     $mail->AddCC($_SESSION['correo'], $_SESSION['nombre']);
-    $mail->AddCC("weromero@uninorte.edu.co", "Winston Elias Romero Duarte");
+   // $mail->AddCC("weromero@uninorte.edu.co", "Winston Elias Romero Duarte");
     $mail->AddCC("coordinadorequipoinformatico@uninorte.edu.co>", "Coordinador Equipo Informatico");
     $mail->AddCC("arellanaa@uninorte.edu.co>", "Alvaro Ivan Santiago Arellana");
     //Set the subject line

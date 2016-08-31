@@ -114,7 +114,7 @@
     $mail->AddCC("$email_nuevo_responsable", "$nuevo_responsable");
     $mail->AddCC("$email_nuevo_usuario", "$nuevo_usuario");
     $mail->AddCC($_SESSION['correo'], $_SESSION['nombre']);
-    $mail->AddCC("weromero@uninorte.edu.co", "Winston Elias Romero Duarte");
+    //$mail->AddCC("weromero@uninorte.edu.co", "Winston Elias Romero Duarte");
     $mail->AddCC("coordinadorequipoinformatico@uninorte.edu.co>", "Coordinador Equipo Informatico");
     $mail->AddCC("arellanaa@uninorte.edu.co>", "Alvaro Ivan Santiago Arellana");
     
