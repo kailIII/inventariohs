@@ -26,11 +26,11 @@
     $bodega_actual = strtoupper($_POST['bodega_actual']);
     $observaciones = strtoupper($_POST['observaciones']);
 
-    $query = "INSERT INTO hardware(activo_equipo, tipo_equipo, marca_equipo, modelo_equipo, serial_equipo, activo_mon, estado_equipo, dir_ip, dir_mac, punto_de_red, punto_de_voz, f_ult_actualiza, departamento, responsable, email_responsable, usuario, email_usuario, ext_tel, f_compra, bodega_actual, observaciones)
+    $query = "INSERT INTO alquilados(activo_equipo, tipo_equipo, marca_equipo, modelo_equipo, serial_equipo, activo_mon, estado_equipo, dir_ip, dir_mac, punto_de_red, punto_de_voz, f_ult_actualiza, departamento, responsable, email_responsable, usuario, email_usuario, ext_tel, f_compra, bodega_actual, observaciones)
     VALUES ('$activo_equipo', '$tipo_equipo', '$marca_equipo', '$modelo_equipo', '$serial_equipo', 'NO APLICA', '$estado_equipo', '000.000.000.000', '$dir_mac', 'NO TIENE', 'NO TIENE',  NOW(), 'NO APLICA', '$responsable', '$email_responsable', '$usuario', '$email_usuario', '$ext_tel', '$f_compra', '$bodega_actual', '$observaciones')";
     $resultado1 = mysql_query($query,$conexion);
 
-    $query  = "INSERT INTO bitacoras(bit_cod_estado,bit_fecha_estado,bit_activo,bit_usuario) VALUES('7',NOW(),'$activo_equipo',upper('$user'))" or die("Error in the consult.." . mysqli_error($query));
+    $query  = "INSERT INTO bitacora_alquilados(bit_cod_estado,bit_fecha_estado,bit_activo,bit_usuario) VALUES('7',NOW(),'$activo_equipo',upper('$user'))" or die("Error in the consult.." . mysqli_error($query));
     $resultado2 = mysql_query($query,$conexion);
 
     if(mysql_affected_rows()>0){

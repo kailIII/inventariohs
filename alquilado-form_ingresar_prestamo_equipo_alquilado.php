@@ -59,7 +59,7 @@ include_once("config.php");
                   mysql_select_db($database);
                   $id = $_POST['id'];
                   //$sql=mysql_query("select id,data from data where weight='1'");
-                  $query = "SELECT * FROM hardware WHERE estado_equipo = 'SOPORTE' AND tipo_equipo != 'SWITCH' ORDER BY activo_equipo ASC  ";
+                  $query = "SELECT * FROM alquilados WHERE estado_equipo = 'SOPORTE' AND tipo_equipo != 'SWITCH' ORDER BY activo_equipo ASC  ";
                   $resultado = mysql_query($query,$conexion);
                   $numero_de_filas = mysql_num_rows($resultado);
                   //$registro=mysql_fetch_array($resultado);//// no se coloca
@@ -241,7 +241,7 @@ include_once("config.php");
 
   <script src="js/vendor/jquery.js"></script>
   <script src="js/foundation.min.js"></script>
-  <script src="js/soporte.js"></script>
+  <script src="js/alquilado.js"></script>
   <script src="js/correo.js"></script>
   <script>
 //    $(document).foundation();

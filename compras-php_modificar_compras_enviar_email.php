@@ -105,7 +105,7 @@
     $mail->AddCC("recepciondeactivos@uninorte.edu.co", "Recepcion de Activos");
     $mail->AddCC($_SESSION['correo'], $_SESSION['nombre']);
     $mail->AddCC("weromero@uninorte.edu.co", "Winston Elias Romero Duarte");
-    $mail->AddBCC("coordinadorequipoinformatico@uninorte.edu.co>", "Coordinador Equipo Informatico");
+    $mail->AddCC("coordinadorequipoinformatico@uninorte.edu.co>", "Coordinador Equipo Informatico");
     //Set the subject line
     $mail->Subject = 'ENTREGA DE ACTIVO :  ' . "$activo_equipo";
     //Read an HTML message body from an external file, convert referenced images to embedded,
